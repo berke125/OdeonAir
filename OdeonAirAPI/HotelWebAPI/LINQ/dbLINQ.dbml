@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="OdeonAir" Class="dbLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=myodeon.com;Initial Catalog=OdeonAir;User ID=sa;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CESTURConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Hotel" Member="Hotel">
+    <Type Name="Hotel">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IsMainSourceHotel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ShortDesc" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HotelType" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="RoomNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ActivationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RoomNumberDesc" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="Bolge" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Ilce" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Mevki" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="AddressSame" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddressInvoice" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="AddressInvoiceCity" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="AddressInvoiceCountry" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="CommercialName" Type="System.String" DbType="VarChar(1024)" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="Phone1" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Phone2" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Phone3" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Airport" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AirportDistance" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(511)" CanBeNull="true" />
+      <Column Name="Email2" Type="System.String" DbType="NVarChar(511)" CanBeNull="true" />
+      <Column Name="Web" Type="System.String" DbType="NVarChar(511)" CanBeNull="true" />
+      <Column Name="Owner" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="Gm" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TaxOffice" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TaxId" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DefaultBoard" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="AccessKey" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Inactive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CityDistance" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VPosTerminalID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VPosMerchantID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VPosProvUserID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VPosUserID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VPosProvisionPassword" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VPosCompanyName" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="Background" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Foreground" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Foreground2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Background2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Lat" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Lng" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsWinter" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HomePage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BookingComId" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

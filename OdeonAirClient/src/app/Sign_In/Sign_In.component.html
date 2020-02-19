@@ -1,0 +1,58 @@
+<style>
+  #MainContent {
+    width: 700px;
+    padding-left: 200px;
+    margin: 0px;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .spacer {
+    margin-top: 25px;
+  }
+
+  .example-spacer {
+    padding-left: 500px;
+  }
+
+  .mat-raised-button {
+    background-color: blue;
+    font-style: normal;
+    font-size: 12pt;
+    font-family: Tahoma;
+    color: ivory;
+  }
+
+  .validation-error {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: red;
+  }
+
+  .button {
+    margin-left: 0px;
+    font-weight: 500;
+    background-color: blue;
+    color: white;
+  }
+</style> 
+<form #form="ngForm" autocomplete="off" class="example-form">
+  <div class="center">
+    <div id="MainContent">
+      <label>Enter the Hotel's Id: </label>
+      <mat-form-field class="example-full-width">
+        <input name=aCode #aCode="ngModel" [(ngModel)]="id" matInput type="text" required>
+        <div class="validation-error" *ngIf="aCode.invalid && (aCode.dirty || aCode.touched)">
+          This field is required.
+        </div>
+      </mat-form-field>
+      <br />
+      <button mat-raised-button [disabled]="form.invalid" (click)="login()">Next</button>
+      <button mat-raised-button routerLink="/Home">Cancel</button>
+    </div>
+  </div>
+</form>

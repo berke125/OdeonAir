@@ -1,0 +1,169 @@
+<style>
+  .MainContent {
+    width: 850px;
+    padding-left: 100px;
+    margin: 0px;
+    padding-top: 5px;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  mark {
+    background-color: darkblue;
+    color: coral;
+  }
+
+  .row1 {
+    background-color: forestgreen;
+    color: white;
+  }
+
+  .row2 {
+    background-color: red;
+  }
+
+  .general_row {
+    padding-left: 100px;
+  }
+
+  .general_row2 {
+    padding-left: 20px;
+  }
+
+  .general_row3 {
+    padding-left: 5px;
+    padding-right: 10px;
+  }
+
+  .general_row4 {
+    padding-left: 5px;
+    padding-right: 10px;
+  }
+
+  .infobox1 {
+    padding-left: 0px;
+    padding-bottom: 5px;
+  }
+
+  .infobox2 {
+    padding-left: 30px;
+    padding-bottom: 5px;
+  }
+
+  .infobox3 {
+    padding-left: 30px;
+    padding-bottom: 5px;
+  }
+
+  .infobox4 {
+    padding-left: 30px;
+    padding-bottom: 5px;
+  }
+
+  .infobox5 {
+    padding-left: 30px;
+    padding-bottom: 5px;
+  }
+
+  .radio_table_space {
+    padding-top: 0px;
+    display: inline-flex;
+    flex-direction: row;
+  }
+
+  .room-row {
+    padding-left: 25px;
+  }
+
+  .dates-row {
+    padding-left: 30px;
+  }
+
+  .filter-error {
+    padding-top: 13px;
+    padding-bottom: 20px;
+    color: red;
+  }
+
+  .input_content {
+    width: 280px;
+  }
+</style>
+<form>
+  <div class="center">
+    <div class="MainContent">
+      <mat-radio-group class="radio_table_space" [(ngModel)]="myModel" [ngModelOptions]="{standalone: true}" (ngModelChange)=" EmptyRooms()" aria-label="Select an option">
+        <mat-radio-button color="primary" class="infobox1" value="1">Tüm Odalar</mat-radio-button>
+        <mat-radio-button color="primary" class="infobox2" value="2">Boş Odalar</mat-radio-button>
+        <mat-radio-button color="primary" class="infobox3" value="3">Dolu Odalar</mat-radio-button>
+        <mat-radio-button color="primary" class="infobox4" value="4">Bugün Girenler</mat-radio-button>
+        <mat-radio-button color="primary" class="infobox5" value="5">Bugün Çıkanlar</mat-radio-button>
+      </mat-radio-group>
+
+      <div [ngSwitch]="myModel">
+        <mat-form-field *ngSwitchCase="1">
+          <mat-label>Enter the customer's name or surname:  </mat-label>
+          <input class="input_content" matInput [(ngModel)]="isim" type="text" name="search">
+          <button mat-button *ngIf="isim" matSuffix mat-icon-button aria-label="Clear" (click)="isim=''">
+            <mat-icon>close</mat-icon>
+          </button>
+          <div *ngIf="sayac==0">Tüm odalar doludur.</div>
+          <div>Boş odalar: {{sayac}}</div>
+          <div class="filter-error" *ngIf="(hotel_users | filter:isim).length===0">Böyle bir kayıt yoktur.</div>
+        </mat-form-field>
+        <div *ngSwitchCase="2">
+          <div class="filter-error" *ngIf="hotel_users.length===0">Hiç boş oda kalmamıştır.</div>
+        </div>
+        <div *ngSwitchCase="3">
+          <div class="filter-error" *ngIf="hotel_users.length===0">Dolu olan oda yoktur.</div>
+        </div>
+        <div *ngSwitchCase="4">
+          <div class="filter-error" *ngIf="hotel_users.length===0">Bugün giren yoktur.</div>
+        </div>
+        <div *ngSwitchCase="5">
+          <div class="filter-error" *ngIf="hotel_users.length===0">Bugün çıkan yoktur.</div>
+        </div>
+        <div *ngSwitchDefault="">Standard Table</div>
+
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="room-row">Oda_No</th>
+            <th class="general_row">Misafir</th>
+            <th class="dates-row">Giriş Tarihi</th>
+            <th class="dates-row">Çıkış Tarihi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of hotel_users | filter:isim">
+            <th [ngClass]="user.No>0 ? 'row2':'row1'">
+              {{user.OdaNo}}
+              {{user.OdaTip}}
+            </th>
+            <th class="general_row2">
+              {{user.Title}}
+              {{user.FirstName}} {{user.LastName}}
+            </th>
+            <th [ngStyle]="{'color': user.IsFromDate===true ?'green':'black'}" class="general_row3">{{user.FromDate | date:'dd MMMM yyyy'}}</th>
+            <th [ngStyle]="{'color': user.IsEndDate===true  ?'red':'black'}" class="general_row4">{{user.ToDate   | date:'dd MMMM yyyy'}}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</form>
+
+
+
+
+
+
+
+
+
