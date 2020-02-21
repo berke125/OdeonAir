@@ -61,4 +61,64 @@
       <Column Name="BookingComId" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.[_RACKVIEW]" Member="_RACKVIEW">
+    <Type Name="_RACKVIEW">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HotelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoomNo" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="RoomGroup" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="RoomTypeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsRoomOrBed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsReady" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoomStatusId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TheOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsInCapacity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LeftRoom" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="RightRoom" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="FrontRoom" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="BackRoom" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Capacity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MinPax" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaxPax" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Floor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Color" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HKStationId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Block" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RoomId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoomColor" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RoomStatusName" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="RoomStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoomCanSold" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoomTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HKStayOver" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HKCheckout" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HKFree" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HKVIPStayOver" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HKVIPCheckinAdd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OdeonDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="IsFeatured" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArrId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArrName" Type="System.String" DbType="NVarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="DepId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DepName" Type="System.String" DbType="NVarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="ProblemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProblemIsClose" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InVIPStatusText" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InVIPStatusColor" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InName" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="InFromdate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="InTodate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="InFromtime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="InTotime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="InAdult" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InNumberOfChild" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InNumberOfBaby" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InAgency" Type="System.String" DbType="NVarChar(125)" CanBeNull="true" />
+      <Column Name="InGroup" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="InhouseBalance" Type="System.Decimal" DbType="Decimal(19,4)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

@@ -6,7 +6,7 @@ import { UserService } from './shared/USER.service';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 import { HotelService } from './shared/Hotel.service';
-
+import { RackService } from './shared/Rack.service';
 interface Activities
 {
   name: string;
@@ -34,19 +34,19 @@ export class AppComponent implements OnInit {
   dataSource = new MatTreeNestedDataSource<Activities>();
   myDate = Date.now();
   mydate2: Date;
-  title = 'Welcome to Odeon'
+  title = 'Welcome to '
   title2: any = {
     //'Id': 0,
     //'NameSurname': '',
     //'EMail': '',
     //'Password': ''
-    'Id': '',
+    'HotelId': 0,
     'HotelName': ''
 
   };
 
   opened: boolean = false;
-  constructor(public customerService: CustomerService, public userService: UserService, public hotelService: HotelService) {
+  constructor(public customerService: CustomerService, public userService: UserService, public hotelService: HotelService, public rack_service: RackService) {
     this.dataSource.data = TREE_DATA;
   }
   hasChild = (_: number, node: Activities) => !!node.children && node.children.length > 0;
@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
 
     if ((isNullOrUndefined(localStorage.getItem('Hotel'))) == true)
       this.title2 = {
-        'Id': '',
+        'HotelId': 0,
         'HotelName': ''      
       };
     else

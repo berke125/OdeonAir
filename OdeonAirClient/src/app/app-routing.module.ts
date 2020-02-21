@@ -8,7 +8,7 @@ import { CustomerListComponent } from './CustomerList/CustomerList.component';
 import { ForgottenPasswordComponent } from './Forgotten_Password/Forgotten_Password.component';
 import { ChangePasswordComponent } from './Change_Password/Change_Password.component';
 import { RoomListComponent } from './Rooms/RoomList.component';
-
+import { RackComponent } from './Racks/Rack.component';
 
 
 const routes: Routes = [
@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: "Change_Password", component: ChangePasswordComponent },
   { path: "RoomList", component: RoomListComponent },
   { path: 'Welcome', component: WelcomeComponent },
+  { path: 'Racks', component: RackComponent },
 
   { path: '**', component: Hone_PageComponent }
 ];

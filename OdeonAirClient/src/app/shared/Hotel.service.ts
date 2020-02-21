@@ -11,7 +11,7 @@ export class HotelService
 {
   private login: number=0;
   public rootURL = 'http://localhost:49725/api';
-  public Hotel: any = {};
+  public otel: any = {};
   isLoggedin = false;
   constructor(private _http: HttpClient, private router: Router) { }
   GetHotelLogin(id)

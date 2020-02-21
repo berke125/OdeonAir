@@ -20,7 +20,7 @@ import { ForgottenPasswordComponent } from './Forgotten_Password/Forgotten_Passw
 import { ChangePasswordComponent } from './Change_Password/Change_Password.component';
 import { RoomListComponent } from './Rooms/RoomList.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
+import { RackComponent } from './Racks/Rack.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +31,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     CustomerListComponent,
     ForgottenPasswordComponent,
     ChangePasswordComponent,
-    RoomListComponent
+    RoomListComponent,
+    RackComponent
 
   ],
   imports: [

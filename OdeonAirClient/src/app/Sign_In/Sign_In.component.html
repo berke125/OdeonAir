@@ -51,8 +51,11 @@
         </div>
       </mat-form-field>
       <br />
-      <button mat-raised-button [disabled]="form.invalid" (click)="login()">Next</button>
-      <button mat-raised-button routerLink="/Home">Cancel</button>
+      <button mat-raised-button  [disabled]="form.invalid" (click)="login()">Next</button>
+      <button mat-raised-button  routerLink="/Home">Cancel</button>
+      <button mat-raised-button  routerLink="/Sign_In" >Previous</button>
+      <button mat-raised-button  routerLink="/Welcome">Next</button>
+      
     </div>
   </div>
 </form>

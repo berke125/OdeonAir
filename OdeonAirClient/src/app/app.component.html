@@ -11,24 +11,23 @@
   .example-tree-invisible {
     display: none;
   }
+
   .example-tree ul,
   .example-tree li {
     margin-top: 0;
     margin-bottom: 0;
     list-style-type: none;
   }
-  .example-tree
-  {
-    background-color:navy;
-    
-  }
-  .mat-tree-node
-  {
 
-    color:coral;
-    font-size:20px;
+  .example-tree {
+    background-color: navy;
   }
- 
+
+  .mat-tree-node {
+    color: coral;
+    font-size: 20px;
+  }
+
   h1,
   h2,
   h3,
@@ -97,9 +96,8 @@
 
   ul li {
     color: white;
- 
- 
   }
+
     ul li a {
       color: white;
       text-decoration: none;
@@ -152,9 +150,8 @@
   .menu_spacer {
     padding-top: 10px;
   }
-  .icon-left
-  {
-    
+
+  .icon-left {
   }
 </style>
 
@@ -172,16 +169,14 @@
     </div>
     <span class="example-spacer"></span>
     <h4 style="text-align:center" *ngIf="title2!=''">
-      {{title}} {{title2.Name}}
+      {{title}} {{title2.HotelName}}
     </h4>
     <span class="example-spacer2"></span>
     <div>
       <a style="color:coral" mat-button routerLink="/Home">Home Page</a>
-      <a style="color:coral" mat-button *ngIf="!customerService.LoggedIn()" routerLink="/Sign_In">Sign In</a>
-      <a style="color:coral" mat-button *ngIf="customerService.LoggedIn()" routerLink="/Home" (click)="logout()">Logout</a>
-
+      <a style="color:coral" mat-button *ngIf="!hotelService.LoggedIn()" routerLink="/Sign_In">Sign In</a>
+      <a style="color:coral" mat-button *ngIf="hotelService.LoggedIn()" routerLink="/Home" (click)="logout()">Logout</a>
     </div>
-
   </mat-toolbar-row>
 </mat-toolbar>
 
@@ -193,16 +188,16 @@
       <li>
         <a mat-button routerLink="/Home">Home</a>
       </li>
-      <li *ngIf="!customerService.LoggedIn()">
+      <li *ngIf="!hotelService.LoggedIn()">
         <a mat-button routerLink="/Sign_In">Sign In</a>
       </li>
-      <li *ngIf="customerService.LoggedIn()">
+      <li *ngIf="hotelService.LoggedIn()">
         <a mat-button routerLink="/CustomerList">Customer</a>
       </li>
-      <li *ngIf="customerService.LoggedIn()">
+      <li *ngIf="hotelService.LoggedIn()">
         <a mat-button>Reservations</a>
       </li>
-      <li *ngIf="customerService.LoggedIn()">
+      <li *ngIf="hotelService.LoggedIn()">
         <a mat-button routerLink="/RoomList">Room Status </a>
       </li>
       <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
@@ -237,15 +232,16 @@
           Restaurants
         </a>
       </li>
+      <li *ngIf="hotelService.LoggedIn()">
+        <a mat-button routerLink="/Racks">Racks</a>
+      </li>
     </ul>
   </mat-sidenav>
   <mat-sidenav-content>
-
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 
 </mat-sidenav-container>
-
 <!-- Footer -->
 <footer class="page-footer" style="color:coral">
   <div class="footer-copyright text-center py-3">

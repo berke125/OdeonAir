@@ -1,0 +1,147 @@
+<style>
+  .MainContent {
+    width: 850px;
+    padding-left: 100px;
+    margin: 0px;
+    padding-top: 5px;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  mark {
+    background-color: darkblue;
+    color: coral;
+  }
+
+  .row1 {
+    background-color: forestgreen;
+    color: white;
+  }
+
+  .row2 {
+    background-color: red;
+  }
+
+  .general_row {
+    padding-left: 100px;
+  }
+
+  .general_row2 {
+    padding-left: 20px;
+  }
+
+  .general_row3 {
+    padding-left: 5px;
+    padding-right: 10px;
+  }
+
+  .general_row4 {
+    padding-left: 5px;
+    padding-right: 10px;
+  }
+
+  .infobox1 {
+    padding-left: 0px;
+    padding-bottom: 5px;
+  }
+
+  .infobox2 {
+    padding-left: 30px;
+    padding-bottom: 5px;
+  }
+
+  .infobox3 {
+    padding-left: 30px;
+    padding-bottom: 5px;
+  }
+
+  .infobox4 {
+    padding-left: 30px;
+    padding-bottom: 5px;
+  }
+
+  .infobox5 {
+    padding-left: 30px;
+    padding-bottom: 5px;
+  }
+
+  .radio_table_space {
+    padding-top: 0px;
+    display: inline-flex;
+    flex-direction: row;
+  }
+
+  .room-row {
+    padding-left: 25px;
+  }
+
+  .dates-row {
+    padding-left: 30px;
+  }
+
+  .filter-error {
+    padding-top: 13px;
+    padding-bottom: 20px;
+    color: red;
+  }
+
+  .input_content {
+    width: 280px;
+  }
+</style>
+<form>
+  <div class="center">
+    <div class="MainContent">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="room-row">Oda_No</th>
+            <th class="general_row">Oda_Renk</th>
+            <th class="dates-row">RoomStatusName</th>
+            <th class="dates-row">RoomTypeName</th>
+            <th class="dates-row">InName</th>
+            <th class="dates-row">InFromDate</th>
+            <th class="dates-row">InToDate</th>
+            <th class="dates-row">InAgency</th>
+            <th class="dates-row">InHouseBalance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let rack of racks">
+            <th>
+              {{rack.Room_no}}
+            </th>
+            <th>
+              {{rack.Room_color}}
+            </th>
+            <th>
+              {{rack.Room_status_name}}
+            </th>
+            <th>
+              {{rack.Room_type_name}}
+            </th>
+            <th>
+              {{rack.In_name}}
+            </th>
+            <th>
+              {{rack.In_from_date}}
+            </th>
+            <th>
+              {{rack.In_to_date}}
+            </th>
+            <th>
+              {{rack.In_agency}}
+            </th>
+            <th>
+              {{rack.In_house_balance}}
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</form>

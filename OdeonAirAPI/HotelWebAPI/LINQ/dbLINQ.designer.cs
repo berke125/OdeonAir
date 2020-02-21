@@ -72,6 +72,14 @@ namespace HotelWebAPI.LINQ
 				return this.GetTable<Hotel>();
 			}
 		}
+		
+		public System.Data.Linq.Table<_RACKVIEW> _RACKVIEW
+		{
+			get
+			{
+				return this.GetTable<_RACKVIEW>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Hotel")]
@@ -1476,6 +1484,1023 @@ namespace HotelWebAPI.LINQ
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[_RACKVIEW]")]
+	public partial class _RACKVIEW
+	{
+		
+		private int _Id;
+		
+		private int _HotelId;
+		
+		private string _RoomNo;
+		
+		private string _RoomGroup;
+		
+		private int _RoomTypeId;
+		
+		private int _IsRoomOrBed;
+		
+		private int _IsReady;
+		
+		private int _RoomStatusId;
+		
+		private int _TheOrder;
+		
+		private int _IsInCapacity;
+		
+		private string _LeftRoom;
+		
+		private string _RightRoom;
+		
+		private string _FrontRoom;
+		
+		private string _BackRoom;
+		
+		private string _Description;
+		
+		private int _Capacity;
+		
+		private int _MinPax;
+		
+		private int _MaxPax;
+		
+		private int _Floor;
+		
+		private string _Color;
+		
+		private System.Nullable<int> _HKStationId;
+		
+		private string _Block;
+		
+		private System.Nullable<System.DateTime> _Created_Date;
+		
+		private int _RoomId;
+		
+		private string _RoomColor;
+		
+		private string _RoomStatusName;
+		
+		private int _RoomStatus;
+		
+		private int _RoomCanSold;
+		
+		private string _RoomTypeName;
+		
+		private int _HKStayOver;
+		
+		private int _HKCheckout;
+		
+		private int _HKFree;
+		
+		private int _HKVIPStayOver;
+		
+		private int _HKVIPCheckinAdd;
+		
+		private System.DateTime _OdeonDate;
+		
+		private int _IsFeatured;
+		
+		private int _ArrId;
+		
+		private string _ArrName;
+		
+		private int _DepId;
+		
+		private string _DepName;
+		
+		private int _ProblemId;
+		
+		private int _ProblemIsClose;
+		
+		private int _InId;
+		
+		private string _InVIPStatusText;
+		
+		private string _InVIPStatusColor;
+		
+		private string _InName;
+		
+		private System.DateTime _InFromdate;
+		
+		private System.DateTime _InTodate;
+		
+		private System.TimeSpan _InFromtime;
+		
+		private System.TimeSpan _InTotime;
+		
+		private int _InAdult;
+		
+		private int _InNumberOfChild;
+		
+		private int _InNumberOfBaby;
+		
+		private string _InAgency;
+		
+		private string _InGroup;
+		
+		private System.Nullable<decimal> _InhouseBalance;
+		
+		public _RACKVIEW()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HotelId", DbType="Int NOT NULL")]
+		public int HotelId
+		{
+			get
+			{
+				return this._HotelId;
+			}
+			set
+			{
+				if ((this._HotelId != value))
+				{
+					this._HotelId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomNo", DbType="NVarChar(25) NOT NULL", CanBeNull=false)]
+		public string RoomNo
+		{
+			get
+			{
+				return this._RoomNo;
+			}
+			set
+			{
+				if ((this._RoomNo != value))
+				{
+					this._RoomNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomGroup", DbType="NVarChar(25)")]
+		public string RoomGroup
+		{
+			get
+			{
+				return this._RoomGroup;
+			}
+			set
+			{
+				if ((this._RoomGroup != value))
+				{
+					this._RoomGroup = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomTypeId", DbType="Int NOT NULL")]
+		public int RoomTypeId
+		{
+			get
+			{
+				return this._RoomTypeId;
+			}
+			set
+			{
+				if ((this._RoomTypeId != value))
+				{
+					this._RoomTypeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsRoomOrBed", DbType="Int NOT NULL")]
+		public int IsRoomOrBed
+		{
+			get
+			{
+				return this._IsRoomOrBed;
+			}
+			set
+			{
+				if ((this._IsRoomOrBed != value))
+				{
+					this._IsRoomOrBed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsReady", DbType="Int NOT NULL")]
+		public int IsReady
+		{
+			get
+			{
+				return this._IsReady;
+			}
+			set
+			{
+				if ((this._IsReady != value))
+				{
+					this._IsReady = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomStatusId", DbType="Int NOT NULL")]
+		public int RoomStatusId
+		{
+			get
+			{
+				return this._RoomStatusId;
+			}
+			set
+			{
+				if ((this._RoomStatusId != value))
+				{
+					this._RoomStatusId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TheOrder", DbType="Int NOT NULL")]
+		public int TheOrder
+		{
+			get
+			{
+				return this._TheOrder;
+			}
+			set
+			{
+				if ((this._TheOrder != value))
+				{
+					this._TheOrder = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsInCapacity", DbType="Int NOT NULL")]
+		public int IsInCapacity
+		{
+			get
+			{
+				return this._IsInCapacity;
+			}
+			set
+			{
+				if ((this._IsInCapacity != value))
+				{
+					this._IsInCapacity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LeftRoom", DbType="NVarChar(25)")]
+		public string LeftRoom
+		{
+			get
+			{
+				return this._LeftRoom;
+			}
+			set
+			{
+				if ((this._LeftRoom != value))
+				{
+					this._LeftRoom = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RightRoom", DbType="NVarChar(25)")]
+		public string RightRoom
+		{
+			get
+			{
+				return this._RightRoom;
+			}
+			set
+			{
+				if ((this._RightRoom != value))
+				{
+					this._RightRoom = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FrontRoom", DbType="NVarChar(25)")]
+		public string FrontRoom
+		{
+			get
+			{
+				return this._FrontRoom;
+			}
+			set
+			{
+				if ((this._FrontRoom != value))
+				{
+					this._FrontRoom = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BackRoom", DbType="NVarChar(25)")]
+		public string BackRoom
+		{
+			get
+			{
+				return this._BackRoom;
+			}
+			set
+			{
+				if ((this._BackRoom != value))
+				{
+					this._BackRoom = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Capacity", DbType="Int NOT NULL")]
+		public int Capacity
+		{
+			get
+			{
+				return this._Capacity;
+			}
+			set
+			{
+				if ((this._Capacity != value))
+				{
+					this._Capacity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MinPax", DbType="Int NOT NULL")]
+		public int MinPax
+		{
+			get
+			{
+				return this._MinPax;
+			}
+			set
+			{
+				if ((this._MinPax != value))
+				{
+					this._MinPax = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaxPax", DbType="Int NOT NULL")]
+		public int MaxPax
+		{
+			get
+			{
+				return this._MaxPax;
+			}
+			set
+			{
+				if ((this._MaxPax != value))
+				{
+					this._MaxPax = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Floor", DbType="Int NOT NULL")]
+		public int Floor
+		{
+			get
+			{
+				return this._Floor;
+			}
+			set
+			{
+				if ((this._Floor != value))
+				{
+					this._Floor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Color", DbType="NVarChar(50)")]
+		public string Color
+		{
+			get
+			{
+				return this._Color;
+			}
+			set
+			{
+				if ((this._Color != value))
+				{
+					this._Color = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HKStationId", DbType="Int")]
+		public System.Nullable<int> HKStationId
+		{
+			get
+			{
+				return this._HKStationId;
+			}
+			set
+			{
+				if ((this._HKStationId != value))
+				{
+					this._HKStationId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Block", DbType="NVarChar(25)")]
+		public string Block
+		{
+			get
+			{
+				return this._Block;
+			}
+			set
+			{
+				if ((this._Block != value))
+				{
+					this._Block = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Created_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Created_Date
+		{
+			get
+			{
+				return this._Created_Date;
+			}
+			set
+			{
+				if ((this._Created_Date != value))
+				{
+					this._Created_Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomId", DbType="Int NOT NULL")]
+		public int RoomId
+		{
+			get
+			{
+				return this._RoomId;
+			}
+			set
+			{
+				if ((this._RoomId != value))
+				{
+					this._RoomId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomColor", DbType="NVarChar(50)")]
+		public string RoomColor
+		{
+			get
+			{
+				return this._RoomColor;
+			}
+			set
+			{
+				if ((this._RoomColor != value))
+				{
+					this._RoomColor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomStatusName", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string RoomStatusName
+		{
+			get
+			{
+				return this._RoomStatusName;
+			}
+			set
+			{
+				if ((this._RoomStatusName != value))
+				{
+					this._RoomStatusName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomStatus", DbType="Int NOT NULL")]
+		public int RoomStatus
+		{
+			get
+			{
+				return this._RoomStatus;
+			}
+			set
+			{
+				if ((this._RoomStatus != value))
+				{
+					this._RoomStatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomCanSold", DbType="Int NOT NULL")]
+		public int RoomCanSold
+		{
+			get
+			{
+				return this._RoomCanSold;
+			}
+			set
+			{
+				if ((this._RoomCanSold != value))
+				{
+					this._RoomCanSold = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomTypeName", DbType="NVarChar(50)")]
+		public string RoomTypeName
+		{
+			get
+			{
+				return this._RoomTypeName;
+			}
+			set
+			{
+				if ((this._RoomTypeName != value))
+				{
+					this._RoomTypeName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HKStayOver", DbType="Int NOT NULL")]
+		public int HKStayOver
+		{
+			get
+			{
+				return this._HKStayOver;
+			}
+			set
+			{
+				if ((this._HKStayOver != value))
+				{
+					this._HKStayOver = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HKCheckout", DbType="Int NOT NULL")]
+		public int HKCheckout
+		{
+			get
+			{
+				return this._HKCheckout;
+			}
+			set
+			{
+				if ((this._HKCheckout != value))
+				{
+					this._HKCheckout = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HKFree", DbType="Int NOT NULL")]
+		public int HKFree
+		{
+			get
+			{
+				return this._HKFree;
+			}
+			set
+			{
+				if ((this._HKFree != value))
+				{
+					this._HKFree = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HKVIPStayOver", DbType="Int NOT NULL")]
+		public int HKVIPStayOver
+		{
+			get
+			{
+				return this._HKVIPStayOver;
+			}
+			set
+			{
+				if ((this._HKVIPStayOver != value))
+				{
+					this._HKVIPStayOver = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HKVIPCheckinAdd", DbType="Int NOT NULL")]
+		public int HKVIPCheckinAdd
+		{
+			get
+			{
+				return this._HKVIPCheckinAdd;
+			}
+			set
+			{
+				if ((this._HKVIPCheckinAdd != value))
+				{
+					this._HKVIPCheckinAdd = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OdeonDate", DbType="Date NOT NULL")]
+		public System.DateTime OdeonDate
+		{
+			get
+			{
+				return this._OdeonDate;
+			}
+			set
+			{
+				if ((this._OdeonDate != value))
+				{
+					this._OdeonDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsFeatured", DbType="Int NOT NULL")]
+		public int IsFeatured
+		{
+			get
+			{
+				return this._IsFeatured;
+			}
+			set
+			{
+				if ((this._IsFeatured != value))
+				{
+					this._IsFeatured = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArrId", DbType="Int NOT NULL")]
+		public int ArrId
+		{
+			get
+			{
+				return this._ArrId;
+			}
+			set
+			{
+				if ((this._ArrId != value))
+				{
+					this._ArrId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArrName", DbType="NVarChar(101) NOT NULL", CanBeNull=false)]
+		public string ArrName
+		{
+			get
+			{
+				return this._ArrName;
+			}
+			set
+			{
+				if ((this._ArrName != value))
+				{
+					this._ArrName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepId", DbType="Int NOT NULL")]
+		public int DepId
+		{
+			get
+			{
+				return this._DepId;
+			}
+			set
+			{
+				if ((this._DepId != value))
+				{
+					this._DepId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepName", DbType="NVarChar(101) NOT NULL", CanBeNull=false)]
+		public string DepName
+		{
+			get
+			{
+				return this._DepName;
+			}
+			set
+			{
+				if ((this._DepName != value))
+				{
+					this._DepName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProblemId", DbType="Int NOT NULL")]
+		public int ProblemId
+		{
+			get
+			{
+				return this._ProblemId;
+			}
+			set
+			{
+				if ((this._ProblemId != value))
+				{
+					this._ProblemId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProblemIsClose", DbType="Int NOT NULL")]
+		public int ProblemIsClose
+		{
+			get
+			{
+				return this._ProblemIsClose;
+			}
+			set
+			{
+				if ((this._ProblemIsClose != value))
+				{
+					this._ProblemIsClose = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InId", DbType="Int NOT NULL")]
+		public int InId
+		{
+			get
+			{
+				return this._InId;
+			}
+			set
+			{
+				if ((this._InId != value))
+				{
+					this._InId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InVIPStatusText", DbType="NVarChar(50)")]
+		public string InVIPStatusText
+		{
+			get
+			{
+				return this._InVIPStatusText;
+			}
+			set
+			{
+				if ((this._InVIPStatusText != value))
+				{
+					this._InVIPStatusText = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InVIPStatusColor", DbType="NVarChar(50)")]
+		public string InVIPStatusColor
+		{
+			get
+			{
+				return this._InVIPStatusColor;
+			}
+			set
+			{
+				if ((this._InVIPStatusColor != value))
+				{
+					this._InVIPStatusColor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InName", DbType="NVarChar(101)")]
+		public string InName
+		{
+			get
+			{
+				return this._InName;
+			}
+			set
+			{
+				if ((this._InName != value))
+				{
+					this._InName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InFromdate", DbType="Date NOT NULL")]
+		public System.DateTime InFromdate
+		{
+			get
+			{
+				return this._InFromdate;
+			}
+			set
+			{
+				if ((this._InFromdate != value))
+				{
+					this._InFromdate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InTodate", DbType="Date NOT NULL")]
+		public System.DateTime InTodate
+		{
+			get
+			{
+				return this._InTodate;
+			}
+			set
+			{
+				if ((this._InTodate != value))
+				{
+					this._InTodate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InFromtime", DbType="Time NOT NULL")]
+		public System.TimeSpan InFromtime
+		{
+			get
+			{
+				return this._InFromtime;
+			}
+			set
+			{
+				if ((this._InFromtime != value))
+				{
+					this._InFromtime = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InTotime", DbType="Time NOT NULL")]
+		public System.TimeSpan InTotime
+		{
+			get
+			{
+				return this._InTotime;
+			}
+			set
+			{
+				if ((this._InTotime != value))
+				{
+					this._InTotime = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InAdult", DbType="Int NOT NULL")]
+		public int InAdult
+		{
+			get
+			{
+				return this._InAdult;
+			}
+			set
+			{
+				if ((this._InAdult != value))
+				{
+					this._InAdult = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InNumberOfChild", DbType="Int NOT NULL")]
+		public int InNumberOfChild
+		{
+			get
+			{
+				return this._InNumberOfChild;
+			}
+			set
+			{
+				if ((this._InNumberOfChild != value))
+				{
+					this._InNumberOfChild = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InNumberOfBaby", DbType="Int NOT NULL")]
+		public int InNumberOfBaby
+		{
+			get
+			{
+				return this._InNumberOfBaby;
+			}
+			set
+			{
+				if ((this._InNumberOfBaby != value))
+				{
+					this._InNumberOfBaby = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InAgency", DbType="NVarChar(125)")]
+		public string InAgency
+		{
+			get
+			{
+				return this._InAgency;
+			}
+			set
+			{
+				if ((this._InAgency != value))
+				{
+					this._InAgency = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InGroup", DbType="NVarChar(150)")]
+		public string InGroup
+		{
+			get
+			{
+				return this._InGroup;
+			}
+			set
+			{
+				if ((this._InGroup != value))
+				{
+					this._InGroup = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InhouseBalance", DbType="Decimal(19,4)")]
+		public System.Nullable<decimal> InhouseBalance
+		{
+			get
+			{
+				return this._InhouseBalance;
+			}
+			set
+			{
+				if ((this._InhouseBalance != value))
+				{
+					this._InhouseBalance = value;
+				}
 			}
 		}
 	}

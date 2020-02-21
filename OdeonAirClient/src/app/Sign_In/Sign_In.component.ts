@@ -14,17 +14,17 @@ export class Sign_InComponent {
   isLoggedin=false;
   login() {
     this.service.GetHotelLogin(this.id).subscribe((hotel: any) => {
-      if (hotel != null) {
+      if (hotel.HotelId != 0) {
         this.isLoggedin = true;
         alert('Başarıyla giriş yaptınız.' + hotel.HotelName);
         localStorage.setItem('Hotel', JSON.stringify(hotel));
-        this.service.Hotel = hotel;
+        this.service.otel = hotel;
         location.reload();
         this.router.navigateByUrl('/Welcome');
       }
       else {
         this.isLoggedin = false;
-        alert('Giriş başarısız.');
+        alert('Girilen Id için böyle bir kayıt yoktur. ');
       }
 
 

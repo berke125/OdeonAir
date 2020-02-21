@@ -8,5 +8,11 @@
         <elementListCompartment Id="5123c801-eec4-4c22-a680-5e78aba5435f" absoluteBounds="0.76499999999999968, 0.96, 1.9700000000000002, 11.2105712890625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="67d939d9-10a1-4504-b90e-20d24d6a4a1e" absoluteBounds="3.375, 0.5, 2, 11.578269856770833">
+      <DataClassMoniker Name="/dbLINQDataContext/_RACKVIEW" />
+      <nestedChildShapes>
+        <elementListCompartment Id="94f75235-89ff-4584-bdea-e79fa5d71d9f" absoluteBounds="3.3899999999999997, 0.96, 1.9700000000000002, 11.018269856770832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
