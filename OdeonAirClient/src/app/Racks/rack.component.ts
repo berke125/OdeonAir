@@ -8,11 +8,15 @@ import { RackService } from '../shared/Rack.service';
 })
 export class RackComponent implements OnInit
 {
+  public hotel: any = {};
   racks: any = [];
   constructor(private rack_service: RackService, private router: Router) { }
   AllRacks()
   {
-    return this.rack_service.GetRacks().subscribe((data) =>  this.racks = data );
+
+    this.hotel = JSON.parse(localStorage.getItem('Hotel'));
+
+    return this.rack_service.GetRacks(this.hotel.HotelId).subscribe((data) => this.racks = data);
   }
   ngOnInit() {
     this.AllRacks();

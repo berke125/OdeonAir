@@ -10,7 +10,7 @@ export class RackService
 {
   public rootURL = 'http://localhost:49725/api';
   constructor(private _http: HttpClient, private router: Router) { }
-  GetRacks() {
-    return this._http.get(this.rootURL + '/Rack');
+  GetRacks(otel_id) {
+    return this._http.get(this.rootURL + '/Rack?Otel_Id=' + otel_id);
   }
 }

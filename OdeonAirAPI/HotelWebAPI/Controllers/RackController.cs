@@ -12,12 +12,12 @@ namespace HotelWebAPI.Controllers
     public class RackController : ApiController
     {
         private dbLINQDataContext db = new dbLINQDataContext();
-        public List<RackPoco> GetRack()
+        public List<RackPoco> GetRack(int Otel_Id)
         {
             List<_RACKVIEW> rackdblist = (from x in db._RACKVIEW
                                           
                                           orderby x.RoomNo
-                                          where x.HotelId==11316
+                                          where x.HotelId==Otel_Id
                                           select x).ToList();
 
             List<RackPoco> racklistPoco = new List<RackPoco>();
@@ -25,6 +25,7 @@ namespace HotelWebAPI.Controllers
             {
                 RackPoco rackPoco = new RackPoco
                 {
+                    
                     Room_no = rackdb.RoomNo,
                     Room_color = rackdb.RoomColor,
                     Room_status_name= rackdb.RoomStatusName,

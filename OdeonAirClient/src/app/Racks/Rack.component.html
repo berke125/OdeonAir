@@ -1,8 +1,8 @@
 <style>
   .MainContent {
-    width: 850px;
-    padding-left: 100px;
-    margin: 0px;
+    width: 1500px;
+    padding-left: 10px;
+    
     padding-top: 5px;
   }
 
@@ -88,7 +88,12 @@
     padding-bottom: 20px;
     color: red;
   }
-
+  .rackroom_weight {
+    font-size: 18px;
+  }
+  .racktabcontent {
+    font-size: 18px;
+  }
   .input_content {
     width: 280px;
   }
@@ -99,44 +104,41 @@
       <table class="table">
         <thead>
           <tr>
-            <th class="room-row">Oda_No</th>
-            <th class="general_row">Oda_Renk</th>
-            <th class="dates-row">RoomStatusName</th>
-            <th class="dates-row">RoomTypeName</th>
-            <th class="dates-row">InName</th>
-            <th class="dates-row">InFromDate</th>
-            <th class="dates-row">InToDate</th>
-            <th class="dates-row">InAgency</th>
-            <th class="dates-row">InHouseBalance</th>
+            <th class="racktabcontent">Oda_No</th>
+            
+            <th class="racktabcontent">RoomStatusName</th>
+            <th class="racktabcontent">RoomTypeName</th>
+            <th class="racktabcontent">InName</th>
+            <th class="racktabcontent">InFromDate</th>
+            <th class="racktabcontent">InToDate</th>
+            <th class="racktabcontent">InAgency</th>
+            <th class="racktabcontent">InHouseBalance</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let rack of racks">
-            <th>
+            <th [ngStyle]="{'color':rack.Room_color}" class="rackroom_weight">
               {{rack.Room_no}}
             </th>
-            <th>
-              {{rack.Room_color}}
-            </th>
-            <th>
+            <th class="rackroom_weight">
               {{rack.Room_status_name}}
             </th>
-            <th>
+            <th class="rackroom_weight">
               {{rack.Room_type_name}}
             </th>
-            <th>
+            <th class="rackroom_weight">
               {{rack.In_name}}
             </th>
-            <th>
-              {{rack.In_from_date}}
+            <th class="rackroom_weight">
+              {{rack.In_from_date | date:'dd MMMM yyyy'}}
             </th>
-            <th>
-              {{rack.In_to_date}}
+            <th class="rackroom_weight">
+              {{rack.In_to_date | date:'dd MMMM yyyy'}}
             </th>
-            <th>
+            <th class="rackroom_weight">
               {{rack.In_agency}}
             </th>
-            <th>
+            <th class="rackroom_weight">
               {{rack.In_house_balance}}
             </th>
           </tr>
