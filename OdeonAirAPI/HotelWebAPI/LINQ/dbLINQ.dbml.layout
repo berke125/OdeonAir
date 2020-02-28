@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 12.5" name="dbLINQ">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 19.875" name="dbLINQ">
   <DataContextMoniker Name="/dbLINQDataContext" />
   <nestedChildShapes>
     <classShape Id="9384bf2e-efdf-4692-808d-69c1c0aad9ff" absoluteBounds="0.75, 0.5, 2, 11.7705712890625">
@@ -12,6 +12,12 @@
       <DataClassMoniker Name="/dbLINQDataContext/_RACKVIEW" />
       <nestedChildShapes>
         <elementListCompartment Id="94f75235-89ff-4584-bdea-e79fa5d71d9f" absoluteBounds="3.3899999999999997, 0.96, 1.9700000000000002, 11.018269856770832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="287c3b3f-1043-4b03-912f-63167cac4463" absoluteBounds="5.875, 0.5, 2, 19.078025716145834">
+      <DataClassMoniker Name="/dbLINQDataContext/ReservationVIEW" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ba312de8-7e20-4006-9a96-269d43f258d9" absoluteBounds="5.89, 0.96, 1.9700000000000002, 18.518025716145832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

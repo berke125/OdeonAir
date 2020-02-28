@@ -7,7 +7,7 @@ namespace HotelWebAPI.Models
 {
     public class RackPoco
     {
-     
+        public int ReservationId { get; set; }
         public string Room_no { get; set; }
         public string Room_color { get; set; }
         public string Room_status_name { get; set; }

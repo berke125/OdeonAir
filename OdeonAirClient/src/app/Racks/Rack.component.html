@@ -1,8 +1,7 @@
 <style>
   .MainContent {
-    width: 1500px;
+    width: 1560px;
     padding-left: 10px;
-    
     padding-top: 5px;
   }
 
@@ -70,9 +69,10 @@
   }
 
   .radio_table_space {
-    padding-top: 0px;
+    padding-top: 25px;
     display: inline-flex;
     flex-direction: row;
+    font-size: 18px;
   }
 
   .room-row {
@@ -88,11 +88,53 @@
     padding-bottom: 20px;
     color: red;
   }
+
   .rackroom_weight {
     font-size: 18px;
   }
+
   .racktabcontent {
     font-size: 18px;
+  }
+
+  .rackroom_weight2 {
+    font-size: 18px;
+    color: black;
+  }
+
+  .input_content {
+    width: 280px;
+  }
+
+  .tableheader {
+    font-size: 25px;
+    background-color: steelblue;
+    color: lightcyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .table {
+    margin-top: 12px;
+  }
+
+  .tablestyle {
+    background-color: steelblue;
+    color: lightcyan;
+  }
+
+  .filter-error {
+    padding-top: 13px;
+    padding-bottom: 20px;
+    color: red;
+  }
+
+  .defaultradioexplanation {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .input_content {
     width: 280px;
@@ -101,24 +143,63 @@
 <form>
   <div class="center">
     <div class="MainContent">
+      <div class="tableheader">LIST OF RACKS</div>
+      <mat-radio-group class="radio_table_space" [(ngModel)]="myModel" [ngModelOptions]="{standalone: true}" (ngModelChange)=" Racks_By_Filter()">
+        <mat-radio-button color="primary" class="infobox1" value="1">All Rooms</mat-radio-button>
+        <mat-radio-button color="primary" class="infobox2" value="2">Empty Rooms</mat-radio-button>
+        <mat-radio-button color="primary" class="infobox3" value="3">Full Rooms</mat-radio-button>
+        <mat-radio-button color="primary" class="infobox4" value="4">Low Balanced Rooms</mat-radio-button>
+        <mat-radio-button color="primary" class="infobox5" value="5">High Balanced Rooms</mat-radio-button>
+        <mat-radio-button color="primary" class="infobox5" value="6">Zero Balanced Rooms</mat-radio-button>
+      </mat-radio-group>
+      <div [ngSwitch]="myModel">
+        <mat-form-field *ngSwitchCase="1">
+          <mat-label>Enter the customer's name or surname:  </mat-label>
+          <input class="input_content" matInput [(ngModel)]="isim" type="text" name="search">
+          <button mat-button *ngIf="isim" matSuffix mat-icon-button aria-label="Clear" (click)="isim=''">
+            <mat-icon>close</mat-icon>
+          </button>
+          <div *ngIf="sayac==0">Tüm odalar doludur.</div>
+          <div>Number of empty rooms: {{sayac}}</div>
+          <div class="filter-error" *ngIf="(racks | filter:isim).length===0">Böyle bir kayıt yoktur.</div>
+        </mat-form-field>
+        <div *ngSwitchCase="2">
+          <div class="filter-error" *ngIf="racks.length===0">There is no vacant room.</div>
+        </div>
+        <div *ngSwitchCase="3">
+          <div class="filter-error" *ngIf="racks.length===0">There is no empty room.</div>
+        </div>
+        <div *ngSwitchCase="4">
+          <div class="filter-error" *ngIf="racks.length===0">There are no rooms with less than zero balance.</div>
+        </div>
+        <div *ngSwitchCase="5">
+          <div class="filter-error" *ngIf="racks.length===0">There are no rooms with greater than zero balance.</div>
+        </div>
+        <div *ngSwitchCase="6">
+          <div class="filter-error" *ngIf="racks.length===0">There are no rooms with equal than zero balance.</div>
+        </div>
+        <div class="defaultradioexplanation" *ngSwitchDefault="">Normal Rack Table</div>
+      </div>
       <table class="table">
         <thead>
-          <tr>
-            <th class="racktabcontent">Oda_No</th>
-            
-            <th class="racktabcontent">RoomStatusName</th>
-            <th class="racktabcontent">RoomTypeName</th>
-            <th class="racktabcontent">InName</th>
-            <th class="racktabcontent">InFromDate</th>
-            <th class="racktabcontent">InToDate</th>
-            <th class="racktabcontent">InAgency</th>
-            <th class="racktabcontent">InHouseBalance</th>
+          <tr class="tablestyle">
+            <th class="racktabcontent">Room No</th>
+            <th class="racktabcontent">Room Status Name</th>
+            <th class="racktabcontent">Room Type Name</th>
+            <th class="racktabcontent">Name</th>
+            <th class="racktabcontent">From Date</th>
+            <th class="racktabcontent">To Date</th>
+            <th class="racktabcontent">Agency</th>
+            <th class="racktabcontent">House Balance</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let rack of racks">
-            <th [ngStyle]="{'color':rack.Room_color}" class="rackroom_weight">
-              {{rack.Room_no}}
+          <tr *ngFor="let rack of racks | filter:isim">
+            <th [ngStyle]="{'background-color':rack.Room_color}" class="rackroom_weight2">
+              <a style="color:black" routerLink="/Reservations">
+                {{rack.Room_no}}
+              </a>
+              
             </th>
             <th class="rackroom_weight">
               {{rack.Room_status_name}}
@@ -138,7 +219,7 @@
             <th class="rackroom_weight">
               {{rack.In_agency}}
             </th>
-            <th class="rackroom_weight">
+            <th [ngStyle]="{'color':rack.In_house_balance<0 ? 'red':(rack.In_house_balance===0?'black':'green')}" class="rackroom_weight">
               {{rack.In_house_balance}}
             </th>
           </tr>

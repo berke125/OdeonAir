@@ -178,6 +178,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Controllers\RackController.cs" />
+    <Compile Include="Controllers\ReservationController.cs" />
     <Compile Include="Controllers\RoomViewController.cs" />
     <Compile Include="Controllers\USERsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -210,6 +211,7 @@
     </Compile>
     <Compile Include="Models\HotelPoco.cs" />
     <Compile Include="Models\RackPoco.cs" />
+    <Compile Include="Models\ReservationPoco.cs" />
     <Compile Include="Models\RoomPoco.cs" />
     <Compile Include="Models\UserPoco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

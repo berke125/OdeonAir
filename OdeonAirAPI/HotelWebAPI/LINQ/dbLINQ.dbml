@@ -121,4 +121,103 @@
       <Column Name="InhouseBalance" Type="System.Decimal" DbType="Decimal(19,4)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.ReservationVIEW" Member="ReservationVIEW">
+    <Type Name="ReservationVIEW">
+      <Column Name="RoomNo" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Firstname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Lastname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="LanguageId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VIPStatusId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VIPStatusText" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VIPStatusColor" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ReservationRemark" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NationId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nation" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ContractName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="AgencyName" Type="System.String" DbType="NVarChar(125) NOT NULL" CanBeNull="false" />
+      <Column Name="StatusText" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BoardName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RoomType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ReservationTypeText" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HotelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fromdate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Todate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="OriginalTodate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Fromtime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="Totime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="Leavetime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="BoardId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContractId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoomTypeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoomTypeIdForPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoomNoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AgencyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OriginalId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MarketId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChannelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReservationTypeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsCityLedger" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StayType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DefaultFolioId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MasterFolioId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoomNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AccomTypeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Adult" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NumberOfChild" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChildAge1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChildAge2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChildAge3" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChildAge4" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NumberOfBaby" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BabyAge1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BabyAge2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Extra" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Extra2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SpecialCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SpecialCode2" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Walkin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Forecast" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoomFeatures" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="LateCheckout" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AccountType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AllotmentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SafeKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Lock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LockUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CancelDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="UndoCancelDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="NightMove" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ShareId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ShareMaster" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NextTo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NatMarketId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Inactive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BookDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Voucher" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ExternalCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SaveState" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SaveStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SaveEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FixedPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NoPos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OptionDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BedSheet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HotelCode" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="MasterRefresh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PaxInfo" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Stay" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>
