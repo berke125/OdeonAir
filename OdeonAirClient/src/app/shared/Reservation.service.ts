@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ReservationService
 {
-  public reservations: any = {};
+  
   public rootURL = 'http://localhost:49725/api';
   constructor(private _http: HttpClient, private router: Router) { }
   GetReservationByRoomNumber(otel_id: number,oda_no)

@@ -12,12 +12,14 @@ namespace HotelWebAPI.Controllers
     public class ReservationController : ApiController
     {
         private dbLINQDataContext db = new dbLINQDataContext();
-        public ReservationPoco GetReservationbyRoomNo(int Otel_Id, string room_number)
+        public List<ReservationPoco> GetReservationbyRoomNo(int Otel_Id, string room_number)
         {
-            var reservationdb = db.ReservationVIEW.FirstOrDefault(e => e.RoomNo == room_number);
-            if (reservationdb == null)
-                return new ReservationPoco();
-            else
+            List<ReservationVIEW> reservationList = (from x in db.ReservationVIEW
+                                                     where x.HotelId == Otel_Id && x.RoomNo == room_number
+                                                     select x).ToList();
+            List<ReservationPoco> reservationPocoList = new List<ReservationPoco>();
+
+            foreach (var reservationdb in reservationList)
             {
                 ReservationPoco reservationpoco = new ReservationPoco
                 {
@@ -37,13 +39,15 @@ namespace HotelWebAPI.Controllers
                     ChildAge2 = reservationdb.ChildAge2,
                     ChildAge3 = reservationdb.ChildAge3,
                     ChildAge4 = reservationdb.ChildAge4,
-                    NumberOfBaby=reservationdb.NumberOfBaby,
-                    BabyAge1=reservationdb.BabyAge1,
-                    BabyAge2=reservationdb.BabyAge2,
-                    BookDate=reservationdb.BookDate
+                    NumberOfBaby = reservationdb.NumberOfBaby,
+                    BabyAge1 = reservationdb.BabyAge1,
+                    BabyAge2 = reservationdb.BabyAge2,
+                    BookDate = reservationdb.BookDate
                 };
-                return reservationpoco;
+                reservationPocoList.Add(reservationpoco);
+
             }
+            return reservationPocoList;
         }
     }
 }

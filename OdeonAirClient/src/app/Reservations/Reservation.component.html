@@ -43,8 +43,27 @@
 <form #form="ngForm" autocomplete="off" class="example-form">
   <div class="center">
     <div id="MainContent">
+      <div>
+
+        <label>Oda Numarası:</label>
+        <input *ngIf="Room_Number" matInput disabled />
 
 
+        <br />
+        <label>First Name:</label>
+        <input matInput />
+        <br />
+        <label>Last Name:</label>
+
+        <br />
+        <label>From Date:</label>
+
+        <br />
+        <label>To Date:</label>
+
+        <br />
+      </div>
+      
 
     </div>
   </div>
