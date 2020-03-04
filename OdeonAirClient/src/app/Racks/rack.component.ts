@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RackService } from '../shared/Rack.service';
+import { ReservationClient } from '../model/ReservationClient.model';
 
 @Component({
   selector: 'Rack-root',
@@ -39,5 +40,15 @@ export class RackComponent implements OnInit
     this.AllRacks();
     this.Racks_By_Filter();
 
+  }
+  goReservation(reservationid: number) {
+    if (reservationid > 0) {
+      let reservation_client: ReservationClient = new ReservationClient();
+      reservation_client.Id = reservationid;
+      localStorage.setItem("ReservationClient", JSON.stringify(reservation_client));
+
+      alert(reservationid);
+      this.router.navigate(["/Reservation"]);
+    }
   }
 }

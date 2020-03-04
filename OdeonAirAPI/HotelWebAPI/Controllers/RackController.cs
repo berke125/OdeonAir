@@ -25,7 +25,7 @@ namespace HotelWebAPI.Controllers
             {
                 RackPoco rackPoco = new RackPoco
                 {
-
+                    ReservationId = rackdb.InId,
                     Room_no = rackdb.RoomNo,
                     Room_color = rackdb.RoomColor,
                     Room_status_name = rackdb.RoomStatusName,

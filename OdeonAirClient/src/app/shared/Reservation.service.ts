@@ -16,4 +16,8 @@ export class ReservationService
   {
     return this._http.get(this.rootURL + '/Reservation?Otel_Id=' + otel_id + '&room_number=' + oda_no);
   }
+
+  GetReservationById(resid: number) {
+    return this._http.get(this.rootURL + '/Reservation/' + resid.toString());
+  }
 }

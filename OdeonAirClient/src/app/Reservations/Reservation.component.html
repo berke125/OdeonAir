@@ -44,14 +44,14 @@
   <div class="center">
     <div id="MainContent">
       <div>
-
+       
         <label>Oda Numarası:</label>
-        <input *ngIf="Room_Number" matInput disabled />
+        <input  matInput disabled [(ngModel)] ="reservation.Room_No" name="roomno" #roomno />
 
 
         <br />
         <label>First Name:</label>
-        <input matInput />
+        <input matInput  [(ngModel)] ="reservation.FirstName" name="firstname" #firstname />
         <br />
         <label>Last Name:</label>
 

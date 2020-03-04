@@ -196,7 +196,7 @@
         <tbody>
           <tr *ngFor="let rack of racks | filter:isim">
             <th [ngStyle]="{'background-color':rack.Room_color}" class="rackroom_weight2">
-              <a style="color:black" routerLink="/Reservations">
+              <a style="color:black"  (click)="goReservation(rack.ReservationId)">
                 {{rack.Room_no}}
               </a>
               

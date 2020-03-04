@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: "RoomList", component: RoomListComponent },
   { path: 'Welcome', component: WelcomeComponent },
   { path: 'Racks', component: RackComponent },
-  { path: 'Reservations', component: ReservationComponent },
+  { path: 'Reservation', component: ReservationComponent },
 
   { path: '**', component: Hone_PageComponent }
 ];
