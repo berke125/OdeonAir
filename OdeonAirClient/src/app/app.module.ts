@@ -22,6 +22,11 @@ import { RoomListComponent } from './Rooms/RoomList.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { RackComponent } from './Racks/Rack.component';
 import { ReservationComponent } from './Reservations/Reservation.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+
+import { MatNativeDateModule } from '@angular/material';
+//import { MatMomentDateModule } from '@angular/material/d
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +48,8 @@ import { ReservationComponent } from './Reservations/Reservation.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     FormsModule,
     MatSidenavModule,
     MatMenuModule,
