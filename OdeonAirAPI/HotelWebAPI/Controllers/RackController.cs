@@ -46,6 +46,7 @@ namespace HotelWebAPI.Controllers
             List<_RACKVIEW> rackdblist = new List<_RACKVIEW>();
             switch (roomsfilter)
             {
+
                 case "1":
                     rackdblist = (from x in db._RACKVIEW
                                   orderby x.RoomNo

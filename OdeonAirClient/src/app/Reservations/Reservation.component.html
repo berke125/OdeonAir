@@ -1,6 +1,6 @@
 <style>
   #MainContent {
-    width: 700px;
+    width: 900px;
     padding-left: 200px;
     margin: 0px;
   }
@@ -8,14 +8,33 @@
   .center {
     display: flex;
     justify-content: center;
+    align-items: center;
   }
 
   .spacer {
-    margin-top: 25px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 400px;
+    font-size: 18px;
   }
-
+  .labeltitle
+  {
+    font-size:20px;
+  }
+  .disabledinput {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 400px;
+    font-size: 18px;
+    font-weight:700;
+  }
+  .datetitle {
+    font-size: 18px;
+  }
   .example-spacer {
-    padding-left: 500px;
+    padding-left: 300px;
   }
 
   .mat-raised-button {
@@ -25,15 +44,24 @@
     font-family: Tahoma;
     color: ivory;
   }
-
-  .validation-error {
-    width: 100%;
-    margin-top: .25rem;
-    font-size: 80%;
-    color: red;
+  .mat-button {
+    background-color: darkblue;
+    font-style: normal;
+    font-size: 12pt;
+    font-family: Tahoma;
+    color: ivory;
   }
+    .validation-error {
+      width: 100%;
+      margin-top: .25rem;
+      font-size: 80%;
+      color: red;
+    }
 
   .buttonstate {
+    align-items:flex-end;
+    justify-content:flex-end;
+    display:flex;
   }
 
   .labelweight {
@@ -44,70 +72,98 @@
   <div class="center">
     <div id="MainContent">
       <div>
-
-        <label>Oda Numarası:</label>
-        <input matInput disabled [(ngModel)]="reservation.Room_No" name="roomno" #roomno />
-
-
-        <br />
-        <label>First Name:</label>
-        <input matInput [(ngModel)]="reservation.FirstName" name="firstname" #firstname />
-        <br />
-        <label>Last Name:</label>
-        <input matInput [(ngModel)]="reservation.LastName" name="lastname" #lastname />
-        <br />
-        <label>From Date:</label>
-        <input matInput [(ngModel)]="reservation.FromDate" name="FromDate" #FromDate />
-        <br />
-        <label>To Date:</label>
-        <input matInput [(ngModel)]="reservation.ToDate" name="ToDate" #ToDate />
-        <br />
-        <label>RoomType:</label>
-        <input matInput [(ngModel)]="reservation.RoomType" name="RoomType" #RoomType />
-        <br />
-        <label>Nation:</label>
-        <input matInput [(ngModel)]="reservation.Nation" name="Nation" #Nation />
-        <br />
-        <label>VIPStatus:</label>
-        <input matInput [(ngModel)]="reservation.VIPStatus" name="VIPStatus" #VIPStatus />
-        <br />
-        <label>Phone:</label>
-        <input matInput [(ngModel)]="reservation.Phone" name="Phone" #Phone />
-        <br />
-        <label>ContractName:</label>
-        <input matInput [(ngModel)]="reservation.ContractName" name="ContractName" #ContractName />
-        <br />
-        <label>Status:</label>
-        <input matInput [(ngModel)]="reservation.Status" name="Status" #Status />
-        <br />
-        <label>NumberOfChild:</label>
-        <input matInput [(ngModel)]="reservation.NumberOfChild" name="NumberOfChild" #NumberOfChild />
-        <br />
-        <label>ChildAge1:</label>
-        <input matInput [(ngModel)]="reservation.ChildAge1" name="ChildAge1" #ChildAge1 />
-        <br />
-        <label>ChildAge2:</label>
-        <input matInput [(ngModel)]="reservation.ChildAge2" name="ChildAge2" #ChildAge2 />
-        <br />
-        <label>ChildAge3:</label>
-        <input matInput [(ngModel)]="reservation.ChildAge3" name="ChildAge3" #ChildAge3 />
-        <br />
-        <label>ChildAge4:</label>
-        <input matInput [(ngModel)]="reservation.ChildAge4" name="ChildAge4" #ChildAge4 />
-        <br />
-        <label>NumberOfBaby:</label>
-        <input matInput [(ngModel)]="reservation.NumberOfBaby" name="NumberOfBaby" #NumberOfBaby />
-        <br />
-        <label>BabyAge1:</label>
-        <input matInput [(ngModel)]="reservation.BabyAge1" name="BabyAge1" #BabyAge1 />
-        <br />
-        <label>BabyAge2:</label>
-        <input matInput [(ngModel)]="reservation.BabyAge2" name="BabyAge2" #BabyAge2 />
-        <br />
-        <label>BookDate:</label>
-        <input matInput [(ngModel)]="reservation.BookDate" name="BookDate" #BookDate />
+        <label class="labeltitle">Oda Numarası:</label>
+        <input class="disabledinput" matInput disabled [(ngModel)]="reservation.Room_No" name="roomno" #roomno />
         <br />
 
+        <label class="labeltitle">First Name:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.FirstName" name="firstname" #firstname />
+        <br />
+
+        <label class="labeltitle">Last Name:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.LastName" name="lastname" #lastname />
+        <br />
+
+        <label class="labeltitle">From Date:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.FromDate" name="FromDate" #FromDate />
+        <div class="datetitle">{{reservation.FromDate | date:'dd MMMM yyyy'}} </div>
+        <br />
+
+        <label class="labeltitle">To Date:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.ToDate" name="ToDate" #ToDate />
+        <div class="datetitle">{{reservation.ToDate | date:'dd MMMM yyyy'}}</div>
+        <br />
+
+        <label class="labeltitle">RoomType:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.RoomType" name="RoomType" #RoomType />
+        <br />
+
+        <label class="labeltitle">Nation:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.Nation" name="Nation" #Nation />
+        <br />
+
+        <label class="labeltitle">VIPStatus:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.VIPStatus" name="VIPStatus" #VIPStatus />
+        <br />
+
+        <label class="labeltitle">Phone:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.Phone" name="Phone" #Phone />
+        <br />
+
+        <label class="labeltitle">ContractName:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.ContractName" name="ContractName" #ContractName />
+        <br />
+
+        <label class="labeltitle">Status:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.Status" name="Status" #Status />
+        <br />
+
+        <label class="labeltitle">NumberOfChild:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.NumberOfChild" name="NumberOfChild" #NumberOfChild />
+        <br />
+
+        <label class="labeltitle">ChildAge1:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.ChildAge1" name="ChildAge1" #ChildAge1 />
+        <br />
+
+        <label class="labeltitle">ChildAge2:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.ChildAge2" name="ChildAge2" #ChildAge2 />
+        <br />
+
+        <label class="labeltitle">ChildAge3:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.ChildAge3" name="ChildAge3" #ChildAge3 />
+        <br />
+
+        <label class="labeltitle">ChildAge4:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.ChildAge4" name="ChildAge4" #ChildAge4 />
+        <br />
+
+        <label class="labeltitle">NumberOfBaby:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.NumberOfBaby" name="NumberOfBaby" #NumberOfBaby />
+        <br />
+
+        <label class="labeltitle">BabyAge1:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.BabyAge1" name="BabyAge1" #BabyAge1 />
+        <br />
+
+        <label class="labeltitle">BabyAge2:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.BabyAge2" name="BabyAge2" #BabyAge2 />
+        <br />
+
+        <label class="labeltitle">BookDate:</label>
+        <input class="spacer" matInput [(ngModel)]="reservation.BookDate" name="BookDate" #BookDate />
+        <div class="datetitle">{{reservation.BookDate | date:'dd MMMM yyyy'}}</div>
+        <br />
+
+        <button mat-button>
+          Kaydı Güncelle
+
+        </button>
+        <button mat-button routerLink="/Racks">
+          Oda Tablosuna Geri Dön
+
+        </button>
+        <br />
       </div>
       
 

@@ -46,7 +46,6 @@ export class RackComponent implements OnInit
       let reservation_client: ReservationClient = new ReservationClient();
       reservation_client.Id = reservationid;
       localStorage.setItem("ReservationClient", JSON.stringify(reservation_client));
-
       alert(reservationid);
       this.router.navigate(["/Reservation"]);
     }
