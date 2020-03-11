@@ -33,6 +33,12 @@ namespace HotelWebAPI.LINQ
     partial void InsertHotel(Hotel instance);
     partial void UpdateHotel(Hotel instance);
     partial void DeleteHotel(Hotel instance);
+    partial void InsertReservation(Reservation instance);
+    partial void UpdateReservation(Reservation instance);
+    partial void DeleteReservation(Reservation instance);
+    partial void InsertRoomType(RoomType instance);
+    partial void UpdateRoomType(RoomType instance);
+    partial void DeleteRoomType(RoomType instance);
     #endregion
 		
 		public dbLINQDataContext() : 
@@ -86,6 +92,22 @@ namespace HotelWebAPI.LINQ
 			get
 			{
 				return this.GetTable<ReservationVIEW>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Reservation> Reservation
+		{
+			get
+			{
+				return this.GetTable<Reservation>();
+			}
+		}
+		
+		public System.Data.Linq.Table<RoomType> RoomType
+		{
+			get
+			{
+				return this.GetTable<RoomType>();
 			}
 		}
 	}
@@ -4228,6 +4250,2314 @@ namespace HotelWebAPI.LINQ
 				{
 					this._Stay = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Reservation")]
+	public partial class Reservation : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _HotelId;
+		
+		private int _ProfileId;
+		
+		private System.DateTime _Fromdate;
+		
+		private System.DateTime _Todate;
+		
+		private System.DateTime _OriginalTodate;
+		
+		private System.TimeSpan _Fromtime;
+		
+		private System.TimeSpan _Totime;
+		
+		private System.Nullable<System.TimeSpan> _Leavetime;
+		
+		private int _BoardId;
+		
+		private int _ContractId;
+		
+		private int _Status;
+		
+		private int _RoomTypeId;
+		
+		private int _RoomTypeIdForPrice;
+		
+		private int _RoomNoId;
+		
+		private int _AgencyId;
+		
+		private int _UserId;
+		
+		private int _GroupId;
+		
+		private int _OriginalId;
+		
+		private int _CountryId;
+		
+		private int _MarketId;
+		
+		private int _ChannelId;
+		
+		private int _ReservationTypeId;
+		
+		private int _IsCityLedger;
+		
+		private int _StayType;
+		
+		private int _DefaultFolioId;
+		
+		private int _MasterFolioId;
+		
+		private int _RoomNumber;
+		
+		private int _AccomTypeId;
+		
+		private int _Adult;
+		
+		private int _NumberOfChild;
+		
+		private int _ChildAge1;
+		
+		private int _ChildAge2;
+		
+		private int _ChildAge3;
+		
+		private int _ChildAge4;
+		
+		private int _NumberOfBaby;
+		
+		private int _BabyAge1;
+		
+		private int _BabyAge2;
+		
+		private int _Extra;
+		
+		private int _Extra2;
+		
+		private string _SpecialCode;
+		
+		private string _SpecialCode2;
+		
+		private int _Walkin;
+		
+		private int _Forecast;
+		
+		private string _RoomFeatures;
+		
+		private int _LateCheckout;
+		
+		private int _AccountType;
+		
+		private int _AllotmentId;
+		
+		private int _SafeKey;
+		
+		private int _Lock;
+		
+		private int _LockUserId;
+		
+		private System.DateTime _UpdateDate;
+		
+		private System.DateTime _CancelDate;
+		
+		private System.DateTime _UndoCancelDate;
+		
+		private int _NightMove;
+		
+		private int _ShareId;
+		
+		private int _ShareMaster;
+		
+		private int _NextTo;
+		
+		private int _NatMarketId;
+		
+		private int _Inactive;
+		
+		private System.Nullable<System.DateTime> _BookDate;
+		
+		private string _Voucher;
+		
+		private string _ExternalCode;
+		
+		private int _SaveState;
+		
+		private System.DateTime _SaveStart;
+		
+		private System.Nullable<System.DateTime> _SaveEnd;
+		
+		private System.DateTime _created_date;
+		
+		private int _FixedPrice;
+		
+		private int _NoPos;
+		
+		private System.Nullable<System.DateTime> _OptionDate;
+		
+		private int _BedSheet;
+		
+		private string _HotelCode;
+		
+		private int _MasterRefresh;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnHotelIdChanging(int value);
+    partial void OnHotelIdChanged();
+    partial void OnProfileIdChanging(int value);
+    partial void OnProfileIdChanged();
+    partial void OnFromdateChanging(System.DateTime value);
+    partial void OnFromdateChanged();
+    partial void OnTodateChanging(System.DateTime value);
+    partial void OnTodateChanged();
+    partial void OnOriginalTodateChanging(System.DateTime value);
+    partial void OnOriginalTodateChanged();
+    partial void OnFromtimeChanging(System.TimeSpan value);
+    partial void OnFromtimeChanged();
+    partial void OnTotimeChanging(System.TimeSpan value);
+    partial void OnTotimeChanged();
+    partial void OnLeavetimeChanging(System.Nullable<System.TimeSpan> value);
+    partial void OnLeavetimeChanged();
+    partial void OnBoardIdChanging(int value);
+    partial void OnBoardIdChanged();
+    partial void OnContractIdChanging(int value);
+    partial void OnContractIdChanged();
+    partial void OnStatusChanging(int value);
+    partial void OnStatusChanged();
+    partial void OnRoomTypeIdChanging(int value);
+    partial void OnRoomTypeIdChanged();
+    partial void OnRoomTypeIdForPriceChanging(int value);
+    partial void OnRoomTypeIdForPriceChanged();
+    partial void OnRoomNoIdChanging(int value);
+    partial void OnRoomNoIdChanged();
+    partial void OnAgencyIdChanging(int value);
+    partial void OnAgencyIdChanged();
+    partial void OnUserIdChanging(int value);
+    partial void OnUserIdChanged();
+    partial void OnGroupIdChanging(int value);
+    partial void OnGroupIdChanged();
+    partial void OnOriginalIdChanging(int value);
+    partial void OnOriginalIdChanged();
+    partial void OnCountryIdChanging(int value);
+    partial void OnCountryIdChanged();
+    partial void OnMarketIdChanging(int value);
+    partial void OnMarketIdChanged();
+    partial void OnChannelIdChanging(int value);
+    partial void OnChannelIdChanged();
+    partial void OnReservationTypeIdChanging(int value);
+    partial void OnReservationTypeIdChanged();
+    partial void OnIsCityLedgerChanging(int value);
+    partial void OnIsCityLedgerChanged();
+    partial void OnStayTypeChanging(int value);
+    partial void OnStayTypeChanged();
+    partial void OnDefaultFolioIdChanging(int value);
+    partial void OnDefaultFolioIdChanged();
+    partial void OnMasterFolioIdChanging(int value);
+    partial void OnMasterFolioIdChanged();
+    partial void OnRoomNumberChanging(int value);
+    partial void OnRoomNumberChanged();
+    partial void OnAccomTypeIdChanging(int value);
+    partial void OnAccomTypeIdChanged();
+    partial void OnAdultChanging(int value);
+    partial void OnAdultChanged();
+    partial void OnNumberOfChildChanging(int value);
+    partial void OnNumberOfChildChanged();
+    partial void OnChildAge1Changing(int value);
+    partial void OnChildAge1Changed();
+    partial void OnChildAge2Changing(int value);
+    partial void OnChildAge2Changed();
+    partial void OnChildAge3Changing(int value);
+    partial void OnChildAge3Changed();
+    partial void OnChildAge4Changing(int value);
+    partial void OnChildAge4Changed();
+    partial void OnNumberOfBabyChanging(int value);
+    partial void OnNumberOfBabyChanged();
+    partial void OnBabyAge1Changing(int value);
+    partial void OnBabyAge1Changed();
+    partial void OnBabyAge2Changing(int value);
+    partial void OnBabyAge2Changed();
+    partial void OnExtraChanging(int value);
+    partial void OnExtraChanged();
+    partial void OnExtra2Changing(int value);
+    partial void OnExtra2Changed();
+    partial void OnSpecialCodeChanging(string value);
+    partial void OnSpecialCodeChanged();
+    partial void OnSpecialCode2Changing(string value);
+    partial void OnSpecialCode2Changed();
+    partial void OnWalkinChanging(int value);
+    partial void OnWalkinChanged();
+    partial void OnForecastChanging(int value);
+    partial void OnForecastChanged();
+    partial void OnRoomFeaturesChanging(string value);
+    partial void OnRoomFeaturesChanged();
+    partial void OnLateCheckoutChanging(int value);
+    partial void OnLateCheckoutChanged();
+    partial void OnAccountTypeChanging(int value);
+    partial void OnAccountTypeChanged();
+    partial void OnAllotmentIdChanging(int value);
+    partial void OnAllotmentIdChanged();
+    partial void OnSafeKeyChanging(int value);
+    partial void OnSafeKeyChanged();
+    partial void OnLockChanging(int value);
+    partial void OnLockChanged();
+    partial void OnLockUserIdChanging(int value);
+    partial void OnLockUserIdChanged();
+    partial void OnUpdateDateChanging(System.DateTime value);
+    partial void OnUpdateDateChanged();
+    partial void OnCancelDateChanging(System.DateTime value);
+    partial void OnCancelDateChanged();
+    partial void OnUndoCancelDateChanging(System.DateTime value);
+    partial void OnUndoCancelDateChanged();
+    partial void OnNightMoveChanging(int value);
+    partial void OnNightMoveChanged();
+    partial void OnShareIdChanging(int value);
+    partial void OnShareIdChanged();
+    partial void OnShareMasterChanging(int value);
+    partial void OnShareMasterChanged();
+    partial void OnNextToChanging(int value);
+    partial void OnNextToChanged();
+    partial void OnNatMarketIdChanging(int value);
+    partial void OnNatMarketIdChanged();
+    partial void OnInactiveChanging(int value);
+    partial void OnInactiveChanged();
+    partial void OnBookDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnBookDateChanged();
+    partial void OnVoucherChanging(string value);
+    partial void OnVoucherChanged();
+    partial void OnExternalCodeChanging(string value);
+    partial void OnExternalCodeChanged();
+    partial void OnSaveStateChanging(int value);
+    partial void OnSaveStateChanged();
+    partial void OnSaveStartChanging(System.DateTime value);
+    partial void OnSaveStartChanged();
+    partial void OnSaveEndChanging(System.Nullable<System.DateTime> value);
+    partial void OnSaveEndChanged();
+    partial void Oncreated_dateChanging(System.DateTime value);
+    partial void Oncreated_dateChanged();
+    partial void OnFixedPriceChanging(int value);
+    partial void OnFixedPriceChanged();
+    partial void OnNoPosChanging(int value);
+    partial void OnNoPosChanged();
+    partial void OnOptionDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnOptionDateChanged();
+    partial void OnBedSheetChanging(int value);
+    partial void OnBedSheetChanged();
+    partial void OnHotelCodeChanging(string value);
+    partial void OnHotelCodeChanged();
+    partial void OnMasterRefreshChanging(int value);
+    partial void OnMasterRefreshChanged();
+    #endregion
+		
+		public Reservation()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HotelId", DbType="Int NOT NULL")]
+		public int HotelId
+		{
+			get
+			{
+				return this._HotelId;
+			}
+			set
+			{
+				if ((this._HotelId != value))
+				{
+					this.OnHotelIdChanging(value);
+					this.SendPropertyChanging();
+					this._HotelId = value;
+					this.SendPropertyChanged("HotelId");
+					this.OnHotelIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProfileId", DbType="Int NOT NULL")]
+		public int ProfileId
+		{
+			get
+			{
+				return this._ProfileId;
+			}
+			set
+			{
+				if ((this._ProfileId != value))
+				{
+					this.OnProfileIdChanging(value);
+					this.SendPropertyChanging();
+					this._ProfileId = value;
+					this.SendPropertyChanged("ProfileId");
+					this.OnProfileIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fromdate", DbType="Date NOT NULL")]
+		public System.DateTime Fromdate
+		{
+			get
+			{
+				return this._Fromdate;
+			}
+			set
+			{
+				if ((this._Fromdate != value))
+				{
+					this.OnFromdateChanging(value);
+					this.SendPropertyChanging();
+					this._Fromdate = value;
+					this.SendPropertyChanged("Fromdate");
+					this.OnFromdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Todate", DbType="Date NOT NULL")]
+		public System.DateTime Todate
+		{
+			get
+			{
+				return this._Todate;
+			}
+			set
+			{
+				if ((this._Todate != value))
+				{
+					this.OnTodateChanging(value);
+					this.SendPropertyChanging();
+					this._Todate = value;
+					this.SendPropertyChanged("Todate");
+					this.OnTodateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OriginalTodate", DbType="Date NOT NULL")]
+		public System.DateTime OriginalTodate
+		{
+			get
+			{
+				return this._OriginalTodate;
+			}
+			set
+			{
+				if ((this._OriginalTodate != value))
+				{
+					this.OnOriginalTodateChanging(value);
+					this.SendPropertyChanging();
+					this._OriginalTodate = value;
+					this.SendPropertyChanged("OriginalTodate");
+					this.OnOriginalTodateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fromtime", DbType="Time NOT NULL")]
+		public System.TimeSpan Fromtime
+		{
+			get
+			{
+				return this._Fromtime;
+			}
+			set
+			{
+				if ((this._Fromtime != value))
+				{
+					this.OnFromtimeChanging(value);
+					this.SendPropertyChanging();
+					this._Fromtime = value;
+					this.SendPropertyChanged("Fromtime");
+					this.OnFromtimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Totime", DbType="Time NOT NULL")]
+		public System.TimeSpan Totime
+		{
+			get
+			{
+				return this._Totime;
+			}
+			set
+			{
+				if ((this._Totime != value))
+				{
+					this.OnTotimeChanging(value);
+					this.SendPropertyChanging();
+					this._Totime = value;
+					this.SendPropertyChanged("Totime");
+					this.OnTotimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Leavetime", DbType="Time")]
+		public System.Nullable<System.TimeSpan> Leavetime
+		{
+			get
+			{
+				return this._Leavetime;
+			}
+			set
+			{
+				if ((this._Leavetime != value))
+				{
+					this.OnLeavetimeChanging(value);
+					this.SendPropertyChanging();
+					this._Leavetime = value;
+					this.SendPropertyChanged("Leavetime");
+					this.OnLeavetimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BoardId", DbType="Int NOT NULL")]
+		public int BoardId
+		{
+			get
+			{
+				return this._BoardId;
+			}
+			set
+			{
+				if ((this._BoardId != value))
+				{
+					this.OnBoardIdChanging(value);
+					this.SendPropertyChanging();
+					this._BoardId = value;
+					this.SendPropertyChanged("BoardId");
+					this.OnBoardIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContractId", DbType="Int NOT NULL")]
+		public int ContractId
+		{
+			get
+			{
+				return this._ContractId;
+			}
+			set
+			{
+				if ((this._ContractId != value))
+				{
+					this.OnContractIdChanging(value);
+					this.SendPropertyChanging();
+					this._ContractId = value;
+					this.SendPropertyChanged("ContractId");
+					this.OnContractIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int NOT NULL")]
+		public int Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomTypeId", DbType="Int NOT NULL")]
+		public int RoomTypeId
+		{
+			get
+			{
+				return this._RoomTypeId;
+			}
+			set
+			{
+				if ((this._RoomTypeId != value))
+				{
+					this.OnRoomTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._RoomTypeId = value;
+					this.SendPropertyChanged("RoomTypeId");
+					this.OnRoomTypeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomTypeIdForPrice", DbType="Int NOT NULL")]
+		public int RoomTypeIdForPrice
+		{
+			get
+			{
+				return this._RoomTypeIdForPrice;
+			}
+			set
+			{
+				if ((this._RoomTypeIdForPrice != value))
+				{
+					this.OnRoomTypeIdForPriceChanging(value);
+					this.SendPropertyChanging();
+					this._RoomTypeIdForPrice = value;
+					this.SendPropertyChanged("RoomTypeIdForPrice");
+					this.OnRoomTypeIdForPriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomNoId", DbType="Int NOT NULL")]
+		public int RoomNoId
+		{
+			get
+			{
+				return this._RoomNoId;
+			}
+			set
+			{
+				if ((this._RoomNoId != value))
+				{
+					this.OnRoomNoIdChanging(value);
+					this.SendPropertyChanging();
+					this._RoomNoId = value;
+					this.SendPropertyChanged("RoomNoId");
+					this.OnRoomNoIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgencyId", DbType="Int NOT NULL")]
+		public int AgencyId
+		{
+			get
+			{
+				return this._AgencyId;
+			}
+			set
+			{
+				if ((this._AgencyId != value))
+				{
+					this.OnAgencyIdChanging(value);
+					this.SendPropertyChanging();
+					this._AgencyId = value;
+					this.SendPropertyChanged("AgencyId");
+					this.OnAgencyIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this.OnUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupId", DbType="Int NOT NULL")]
+		public int GroupId
+		{
+			get
+			{
+				return this._GroupId;
+			}
+			set
+			{
+				if ((this._GroupId != value))
+				{
+					this.OnGroupIdChanging(value);
+					this.SendPropertyChanging();
+					this._GroupId = value;
+					this.SendPropertyChanged("GroupId");
+					this.OnGroupIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OriginalId", DbType="Int NOT NULL")]
+		public int OriginalId
+		{
+			get
+			{
+				return this._OriginalId;
+			}
+			set
+			{
+				if ((this._OriginalId != value))
+				{
+					this.OnOriginalIdChanging(value);
+					this.SendPropertyChanging();
+					this._OriginalId = value;
+					this.SendPropertyChanged("OriginalId");
+					this.OnOriginalIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryId", DbType="Int NOT NULL")]
+		public int CountryId
+		{
+			get
+			{
+				return this._CountryId;
+			}
+			set
+			{
+				if ((this._CountryId != value))
+				{
+					this.OnCountryIdChanging(value);
+					this.SendPropertyChanging();
+					this._CountryId = value;
+					this.SendPropertyChanged("CountryId");
+					this.OnCountryIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MarketId", DbType="Int NOT NULL")]
+		public int MarketId
+		{
+			get
+			{
+				return this._MarketId;
+			}
+			set
+			{
+				if ((this._MarketId != value))
+				{
+					this.OnMarketIdChanging(value);
+					this.SendPropertyChanging();
+					this._MarketId = value;
+					this.SendPropertyChanged("MarketId");
+					this.OnMarketIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChannelId", DbType="Int NOT NULL")]
+		public int ChannelId
+		{
+			get
+			{
+				return this._ChannelId;
+			}
+			set
+			{
+				if ((this._ChannelId != value))
+				{
+					this.OnChannelIdChanging(value);
+					this.SendPropertyChanging();
+					this._ChannelId = value;
+					this.SendPropertyChanged("ChannelId");
+					this.OnChannelIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReservationTypeId", DbType="Int NOT NULL")]
+		public int ReservationTypeId
+		{
+			get
+			{
+				return this._ReservationTypeId;
+			}
+			set
+			{
+				if ((this._ReservationTypeId != value))
+				{
+					this.OnReservationTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._ReservationTypeId = value;
+					this.SendPropertyChanged("ReservationTypeId");
+					this.OnReservationTypeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsCityLedger", DbType="Int NOT NULL")]
+		public int IsCityLedger
+		{
+			get
+			{
+				return this._IsCityLedger;
+			}
+			set
+			{
+				if ((this._IsCityLedger != value))
+				{
+					this.OnIsCityLedgerChanging(value);
+					this.SendPropertyChanging();
+					this._IsCityLedger = value;
+					this.SendPropertyChanged("IsCityLedger");
+					this.OnIsCityLedgerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StayType", DbType="Int NOT NULL")]
+		public int StayType
+		{
+			get
+			{
+				return this._StayType;
+			}
+			set
+			{
+				if ((this._StayType != value))
+				{
+					this.OnStayTypeChanging(value);
+					this.SendPropertyChanging();
+					this._StayType = value;
+					this.SendPropertyChanged("StayType");
+					this.OnStayTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DefaultFolioId", DbType="Int NOT NULL")]
+		public int DefaultFolioId
+		{
+			get
+			{
+				return this._DefaultFolioId;
+			}
+			set
+			{
+				if ((this._DefaultFolioId != value))
+				{
+					this.OnDefaultFolioIdChanging(value);
+					this.SendPropertyChanging();
+					this._DefaultFolioId = value;
+					this.SendPropertyChanged("DefaultFolioId");
+					this.OnDefaultFolioIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MasterFolioId", DbType="Int NOT NULL")]
+		public int MasterFolioId
+		{
+			get
+			{
+				return this._MasterFolioId;
+			}
+			set
+			{
+				if ((this._MasterFolioId != value))
+				{
+					this.OnMasterFolioIdChanging(value);
+					this.SendPropertyChanging();
+					this._MasterFolioId = value;
+					this.SendPropertyChanged("MasterFolioId");
+					this.OnMasterFolioIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomNumber", DbType="Int NOT NULL")]
+		public int RoomNumber
+		{
+			get
+			{
+				return this._RoomNumber;
+			}
+			set
+			{
+				if ((this._RoomNumber != value))
+				{
+					this.OnRoomNumberChanging(value);
+					this.SendPropertyChanging();
+					this._RoomNumber = value;
+					this.SendPropertyChanged("RoomNumber");
+					this.OnRoomNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccomTypeId", DbType="Int NOT NULL")]
+		public int AccomTypeId
+		{
+			get
+			{
+				return this._AccomTypeId;
+			}
+			set
+			{
+				if ((this._AccomTypeId != value))
+				{
+					this.OnAccomTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._AccomTypeId = value;
+					this.SendPropertyChanged("AccomTypeId");
+					this.OnAccomTypeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Adult", DbType="Int NOT NULL")]
+		public int Adult
+		{
+			get
+			{
+				return this._Adult;
+			}
+			set
+			{
+				if ((this._Adult != value))
+				{
+					this.OnAdultChanging(value);
+					this.SendPropertyChanging();
+					this._Adult = value;
+					this.SendPropertyChanged("Adult");
+					this.OnAdultChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberOfChild", DbType="Int NOT NULL")]
+		public int NumberOfChild
+		{
+			get
+			{
+				return this._NumberOfChild;
+			}
+			set
+			{
+				if ((this._NumberOfChild != value))
+				{
+					this.OnNumberOfChildChanging(value);
+					this.SendPropertyChanging();
+					this._NumberOfChild = value;
+					this.SendPropertyChanged("NumberOfChild");
+					this.OnNumberOfChildChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChildAge1", DbType="Int NOT NULL")]
+		public int ChildAge1
+		{
+			get
+			{
+				return this._ChildAge1;
+			}
+			set
+			{
+				if ((this._ChildAge1 != value))
+				{
+					this.OnChildAge1Changing(value);
+					this.SendPropertyChanging();
+					this._ChildAge1 = value;
+					this.SendPropertyChanged("ChildAge1");
+					this.OnChildAge1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChildAge2", DbType="Int NOT NULL")]
+		public int ChildAge2
+		{
+			get
+			{
+				return this._ChildAge2;
+			}
+			set
+			{
+				if ((this._ChildAge2 != value))
+				{
+					this.OnChildAge2Changing(value);
+					this.SendPropertyChanging();
+					this._ChildAge2 = value;
+					this.SendPropertyChanged("ChildAge2");
+					this.OnChildAge2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChildAge3", DbType="Int NOT NULL")]
+		public int ChildAge3
+		{
+			get
+			{
+				return this._ChildAge3;
+			}
+			set
+			{
+				if ((this._ChildAge3 != value))
+				{
+					this.OnChildAge3Changing(value);
+					this.SendPropertyChanging();
+					this._ChildAge3 = value;
+					this.SendPropertyChanged("ChildAge3");
+					this.OnChildAge3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChildAge4", DbType="Int NOT NULL")]
+		public int ChildAge4
+		{
+			get
+			{
+				return this._ChildAge4;
+			}
+			set
+			{
+				if ((this._ChildAge4 != value))
+				{
+					this.OnChildAge4Changing(value);
+					this.SendPropertyChanging();
+					this._ChildAge4 = value;
+					this.SendPropertyChanged("ChildAge4");
+					this.OnChildAge4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberOfBaby", DbType="Int NOT NULL")]
+		public int NumberOfBaby
+		{
+			get
+			{
+				return this._NumberOfBaby;
+			}
+			set
+			{
+				if ((this._NumberOfBaby != value))
+				{
+					this.OnNumberOfBabyChanging(value);
+					this.SendPropertyChanging();
+					this._NumberOfBaby = value;
+					this.SendPropertyChanged("NumberOfBaby");
+					this.OnNumberOfBabyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BabyAge1", DbType="Int NOT NULL")]
+		public int BabyAge1
+		{
+			get
+			{
+				return this._BabyAge1;
+			}
+			set
+			{
+				if ((this._BabyAge1 != value))
+				{
+					this.OnBabyAge1Changing(value);
+					this.SendPropertyChanging();
+					this._BabyAge1 = value;
+					this.SendPropertyChanged("BabyAge1");
+					this.OnBabyAge1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BabyAge2", DbType="Int NOT NULL")]
+		public int BabyAge2
+		{
+			get
+			{
+				return this._BabyAge2;
+			}
+			set
+			{
+				if ((this._BabyAge2 != value))
+				{
+					this.OnBabyAge2Changing(value);
+					this.SendPropertyChanging();
+					this._BabyAge2 = value;
+					this.SendPropertyChanged("BabyAge2");
+					this.OnBabyAge2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Extra", DbType="Int NOT NULL")]
+		public int Extra
+		{
+			get
+			{
+				return this._Extra;
+			}
+			set
+			{
+				if ((this._Extra != value))
+				{
+					this.OnExtraChanging(value);
+					this.SendPropertyChanging();
+					this._Extra = value;
+					this.SendPropertyChanged("Extra");
+					this.OnExtraChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Extra2", DbType="Int NOT NULL")]
+		public int Extra2
+		{
+			get
+			{
+				return this._Extra2;
+			}
+			set
+			{
+				if ((this._Extra2 != value))
+				{
+					this.OnExtra2Changing(value);
+					this.SendPropertyChanging();
+					this._Extra2 = value;
+					this.SendPropertyChanged("Extra2");
+					this.OnExtra2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SpecialCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string SpecialCode
+		{
+			get
+			{
+				return this._SpecialCode;
+			}
+			set
+			{
+				if ((this._SpecialCode != value))
+				{
+					this.OnSpecialCodeChanging(value);
+					this.SendPropertyChanging();
+					this._SpecialCode = value;
+					this.SendPropertyChanged("SpecialCode");
+					this.OnSpecialCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SpecialCode2", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string SpecialCode2
+		{
+			get
+			{
+				return this._SpecialCode2;
+			}
+			set
+			{
+				if ((this._SpecialCode2 != value))
+				{
+					this.OnSpecialCode2Changing(value);
+					this.SendPropertyChanging();
+					this._SpecialCode2 = value;
+					this.SendPropertyChanged("SpecialCode2");
+					this.OnSpecialCode2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Walkin", DbType="Int NOT NULL")]
+		public int Walkin
+		{
+			get
+			{
+				return this._Walkin;
+			}
+			set
+			{
+				if ((this._Walkin != value))
+				{
+					this.OnWalkinChanging(value);
+					this.SendPropertyChanging();
+					this._Walkin = value;
+					this.SendPropertyChanged("Walkin");
+					this.OnWalkinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Forecast", DbType="Int NOT NULL")]
+		public int Forecast
+		{
+			get
+			{
+				return this._Forecast;
+			}
+			set
+			{
+				if ((this._Forecast != value))
+				{
+					this.OnForecastChanging(value);
+					this.SendPropertyChanging();
+					this._Forecast = value;
+					this.SendPropertyChanged("Forecast");
+					this.OnForecastChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomFeatures", DbType="NVarChar(500)")]
+		public string RoomFeatures
+		{
+			get
+			{
+				return this._RoomFeatures;
+			}
+			set
+			{
+				if ((this._RoomFeatures != value))
+				{
+					this.OnRoomFeaturesChanging(value);
+					this.SendPropertyChanging();
+					this._RoomFeatures = value;
+					this.SendPropertyChanged("RoomFeatures");
+					this.OnRoomFeaturesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LateCheckout", DbType="Int NOT NULL")]
+		public int LateCheckout
+		{
+			get
+			{
+				return this._LateCheckout;
+			}
+			set
+			{
+				if ((this._LateCheckout != value))
+				{
+					this.OnLateCheckoutChanging(value);
+					this.SendPropertyChanging();
+					this._LateCheckout = value;
+					this.SendPropertyChanged("LateCheckout");
+					this.OnLateCheckoutChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountType", DbType="Int NOT NULL")]
+		public int AccountType
+		{
+			get
+			{
+				return this._AccountType;
+			}
+			set
+			{
+				if ((this._AccountType != value))
+				{
+					this.OnAccountTypeChanging(value);
+					this.SendPropertyChanging();
+					this._AccountType = value;
+					this.SendPropertyChanged("AccountType");
+					this.OnAccountTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllotmentId", DbType="Int NOT NULL")]
+		public int AllotmentId
+		{
+			get
+			{
+				return this._AllotmentId;
+			}
+			set
+			{
+				if ((this._AllotmentId != value))
+				{
+					this.OnAllotmentIdChanging(value);
+					this.SendPropertyChanging();
+					this._AllotmentId = value;
+					this.SendPropertyChanged("AllotmentId");
+					this.OnAllotmentIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SafeKey", DbType="Int NOT NULL")]
+		public int SafeKey
+		{
+			get
+			{
+				return this._SafeKey;
+			}
+			set
+			{
+				if ((this._SafeKey != value))
+				{
+					this.OnSafeKeyChanging(value);
+					this.SendPropertyChanging();
+					this._SafeKey = value;
+					this.SendPropertyChanged("SafeKey");
+					this.OnSafeKeyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lock", DbType="Int NOT NULL")]
+		public int Lock
+		{
+			get
+			{
+				return this._Lock;
+			}
+			set
+			{
+				if ((this._Lock != value))
+				{
+					this.OnLockChanging(value);
+					this.SendPropertyChanging();
+					this._Lock = value;
+					this.SendPropertyChanged("Lock");
+					this.OnLockChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LockUserId", DbType="Int NOT NULL")]
+		public int LockUserId
+		{
+			get
+			{
+				return this._LockUserId;
+			}
+			set
+			{
+				if ((this._LockUserId != value))
+				{
+					this.OnLockUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._LockUserId = value;
+					this.SendPropertyChanged("LockUserId");
+					this.OnLockUserIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdateDate", DbType="Date NOT NULL")]
+		public System.DateTime UpdateDate
+		{
+			get
+			{
+				return this._UpdateDate;
+			}
+			set
+			{
+				if ((this._UpdateDate != value))
+				{
+					this.OnUpdateDateChanging(value);
+					this.SendPropertyChanging();
+					this._UpdateDate = value;
+					this.SendPropertyChanged("UpdateDate");
+					this.OnUpdateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CancelDate", DbType="Date NOT NULL")]
+		public System.DateTime CancelDate
+		{
+			get
+			{
+				return this._CancelDate;
+			}
+			set
+			{
+				if ((this._CancelDate != value))
+				{
+					this.OnCancelDateChanging(value);
+					this.SendPropertyChanging();
+					this._CancelDate = value;
+					this.SendPropertyChanged("CancelDate");
+					this.OnCancelDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UndoCancelDate", DbType="Date NOT NULL")]
+		public System.DateTime UndoCancelDate
+		{
+			get
+			{
+				return this._UndoCancelDate;
+			}
+			set
+			{
+				if ((this._UndoCancelDate != value))
+				{
+					this.OnUndoCancelDateChanging(value);
+					this.SendPropertyChanging();
+					this._UndoCancelDate = value;
+					this.SendPropertyChanged("UndoCancelDate");
+					this.OnUndoCancelDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NightMove", DbType="Int NOT NULL")]
+		public int NightMove
+		{
+			get
+			{
+				return this._NightMove;
+			}
+			set
+			{
+				if ((this._NightMove != value))
+				{
+					this.OnNightMoveChanging(value);
+					this.SendPropertyChanging();
+					this._NightMove = value;
+					this.SendPropertyChanged("NightMove");
+					this.OnNightMoveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShareId", DbType="Int NOT NULL")]
+		public int ShareId
+		{
+			get
+			{
+				return this._ShareId;
+			}
+			set
+			{
+				if ((this._ShareId != value))
+				{
+					this.OnShareIdChanging(value);
+					this.SendPropertyChanging();
+					this._ShareId = value;
+					this.SendPropertyChanged("ShareId");
+					this.OnShareIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShareMaster", DbType="Int NOT NULL")]
+		public int ShareMaster
+		{
+			get
+			{
+				return this._ShareMaster;
+			}
+			set
+			{
+				if ((this._ShareMaster != value))
+				{
+					this.OnShareMasterChanging(value);
+					this.SendPropertyChanging();
+					this._ShareMaster = value;
+					this.SendPropertyChanged("ShareMaster");
+					this.OnShareMasterChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NextTo", DbType="Int NOT NULL")]
+		public int NextTo
+		{
+			get
+			{
+				return this._NextTo;
+			}
+			set
+			{
+				if ((this._NextTo != value))
+				{
+					this.OnNextToChanging(value);
+					this.SendPropertyChanging();
+					this._NextTo = value;
+					this.SendPropertyChanged("NextTo");
+					this.OnNextToChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NatMarketId", DbType="Int NOT NULL")]
+		public int NatMarketId
+		{
+			get
+			{
+				return this._NatMarketId;
+			}
+			set
+			{
+				if ((this._NatMarketId != value))
+				{
+					this.OnNatMarketIdChanging(value);
+					this.SendPropertyChanging();
+					this._NatMarketId = value;
+					this.SendPropertyChanged("NatMarketId");
+					this.OnNatMarketIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Inactive", DbType="Int NOT NULL")]
+		public int Inactive
+		{
+			get
+			{
+				return this._Inactive;
+			}
+			set
+			{
+				if ((this._Inactive != value))
+				{
+					this.OnInactiveChanging(value);
+					this.SendPropertyChanging();
+					this._Inactive = value;
+					this.SendPropertyChanged("Inactive");
+					this.OnInactiveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BookDate", DbType="Date")]
+		public System.Nullable<System.DateTime> BookDate
+		{
+			get
+			{
+				return this._BookDate;
+			}
+			set
+			{
+				if ((this._BookDate != value))
+				{
+					this.OnBookDateChanging(value);
+					this.SendPropertyChanging();
+					this._BookDate = value;
+					this.SendPropertyChanged("BookDate");
+					this.OnBookDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Voucher", DbType="NVarChar(50)")]
+		public string Voucher
+		{
+			get
+			{
+				return this._Voucher;
+			}
+			set
+			{
+				if ((this._Voucher != value))
+				{
+					this.OnVoucherChanging(value);
+					this.SendPropertyChanging();
+					this._Voucher = value;
+					this.SendPropertyChanged("Voucher");
+					this.OnVoucherChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExternalCode", DbType="NVarChar(50)")]
+		public string ExternalCode
+		{
+			get
+			{
+				return this._ExternalCode;
+			}
+			set
+			{
+				if ((this._ExternalCode != value))
+				{
+					this.OnExternalCodeChanging(value);
+					this.SendPropertyChanging();
+					this._ExternalCode = value;
+					this.SendPropertyChanged("ExternalCode");
+					this.OnExternalCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaveState", DbType="Int NOT NULL")]
+		public int SaveState
+		{
+			get
+			{
+				return this._SaveState;
+			}
+			set
+			{
+				if ((this._SaveState != value))
+				{
+					this.OnSaveStateChanging(value);
+					this.SendPropertyChanging();
+					this._SaveState = value;
+					this.SendPropertyChanged("SaveState");
+					this.OnSaveStateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaveStart", DbType="DateTime NOT NULL")]
+		public System.DateTime SaveStart
+		{
+			get
+			{
+				return this._SaveStart;
+			}
+			set
+			{
+				if ((this._SaveStart != value))
+				{
+					this.OnSaveStartChanging(value);
+					this.SendPropertyChanging();
+					this._SaveStart = value;
+					this.SendPropertyChanged("SaveStart");
+					this.OnSaveStartChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaveEnd", DbType="DateTime")]
+		public System.Nullable<System.DateTime> SaveEnd
+		{
+			get
+			{
+				return this._SaveEnd;
+			}
+			set
+			{
+				if ((this._SaveEnd != value))
+				{
+					this.OnSaveEndChanging(value);
+					this.SendPropertyChanging();
+					this._SaveEnd = value;
+					this.SendPropertyChanged("SaveEnd");
+					this.OnSaveEndChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_date", DbType="DateTime NOT NULL")]
+		public System.DateTime created_date
+		{
+			get
+			{
+				return this._created_date;
+			}
+			set
+			{
+				if ((this._created_date != value))
+				{
+					this.Oncreated_dateChanging(value);
+					this.SendPropertyChanging();
+					this._created_date = value;
+					this.SendPropertyChanged("created_date");
+					this.Oncreated_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FixedPrice", DbType="Int NOT NULL")]
+		public int FixedPrice
+		{
+			get
+			{
+				return this._FixedPrice;
+			}
+			set
+			{
+				if ((this._FixedPrice != value))
+				{
+					this.OnFixedPriceChanging(value);
+					this.SendPropertyChanging();
+					this._FixedPrice = value;
+					this.SendPropertyChanged("FixedPrice");
+					this.OnFixedPriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoPos", DbType="Int NOT NULL")]
+		public int NoPos
+		{
+			get
+			{
+				return this._NoPos;
+			}
+			set
+			{
+				if ((this._NoPos != value))
+				{
+					this.OnNoPosChanging(value);
+					this.SendPropertyChanging();
+					this._NoPos = value;
+					this.SendPropertyChanged("NoPos");
+					this.OnNoPosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OptionDate", DbType="Date")]
+		public System.Nullable<System.DateTime> OptionDate
+		{
+			get
+			{
+				return this._OptionDate;
+			}
+			set
+			{
+				if ((this._OptionDate != value))
+				{
+					this.OnOptionDateChanging(value);
+					this.SendPropertyChanging();
+					this._OptionDate = value;
+					this.SendPropertyChanged("OptionDate");
+					this.OnOptionDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BedSheet", DbType="Int NOT NULL")]
+		public int BedSheet
+		{
+			get
+			{
+				return this._BedSheet;
+			}
+			set
+			{
+				if ((this._BedSheet != value))
+				{
+					this.OnBedSheetChanging(value);
+					this.SendPropertyChanging();
+					this._BedSheet = value;
+					this.SendPropertyChanged("BedSheet");
+					this.OnBedSheetChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HotelCode", DbType="NVarChar(15)")]
+		public string HotelCode
+		{
+			get
+			{
+				return this._HotelCode;
+			}
+			set
+			{
+				if ((this._HotelCode != value))
+				{
+					this.OnHotelCodeChanging(value);
+					this.SendPropertyChanging();
+					this._HotelCode = value;
+					this.SendPropertyChanged("HotelCode");
+					this.OnHotelCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MasterRefresh", DbType="Int NOT NULL")]
+		public int MasterRefresh
+		{
+			get
+			{
+				return this._MasterRefresh;
+			}
+			set
+			{
+				if ((this._MasterRefresh != value))
+				{
+					this.OnMasterRefreshChanging(value);
+					this.SendPropertyChanging();
+					this._MasterRefresh = value;
+					this.SendPropertyChanged("MasterRefresh");
+					this.OnMasterRefreshChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RoomType")]
+	public partial class RoomType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _HotelId;
+		
+		private System.Nullable<int> _NumberInHotel;
+		
+		private string _Name;
+		
+		private string _NameEng;
+		
+		private string _Description;
+		
+		private string _DescriptionEng;
+		
+		private System.Nullable<int> _DisplayOrder;
+		
+		private string _FrontOfficeCode;
+		
+		private System.Nullable<int> _MinPax;
+		
+		private System.Nullable<int> _MaxPax;
+		
+		private int _IsFeatured;
+		
+		private int _HKStayOver;
+		
+		private int _HKCheckout;
+		
+		private int _HKFree;
+		
+		private int _HKVIPStayOver;
+		
+		private int _HKVIPCheckinAdd;
+		
+		private int _Inactive;
+		
+		private System.Nullable<System.DateTime> _CREATED_DATE;
+		
+		private string _CREATED_BY;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnHotelIdChanging(int value);
+    partial void OnHotelIdChanged();
+    partial void OnNumberInHotelChanging(System.Nullable<int> value);
+    partial void OnNumberInHotelChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnNameEngChanging(string value);
+    partial void OnNameEngChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnDescriptionEngChanging(string value);
+    partial void OnDescriptionEngChanged();
+    partial void OnDisplayOrderChanging(System.Nullable<int> value);
+    partial void OnDisplayOrderChanged();
+    partial void OnFrontOfficeCodeChanging(string value);
+    partial void OnFrontOfficeCodeChanged();
+    partial void OnMinPaxChanging(System.Nullable<int> value);
+    partial void OnMinPaxChanged();
+    partial void OnMaxPaxChanging(System.Nullable<int> value);
+    partial void OnMaxPaxChanged();
+    partial void OnIsFeaturedChanging(int value);
+    partial void OnIsFeaturedChanged();
+    partial void OnHKStayOverChanging(int value);
+    partial void OnHKStayOverChanged();
+    partial void OnHKCheckoutChanging(int value);
+    partial void OnHKCheckoutChanged();
+    partial void OnHKFreeChanging(int value);
+    partial void OnHKFreeChanged();
+    partial void OnHKVIPStayOverChanging(int value);
+    partial void OnHKVIPStayOverChanged();
+    partial void OnHKVIPCheckinAddChanging(int value);
+    partial void OnHKVIPCheckinAddChanged();
+    partial void OnInactiveChanging(int value);
+    partial void OnInactiveChanged();
+    partial void OnCREATED_DATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnCREATED_DATEChanged();
+    partial void OnCREATED_BYChanging(string value);
+    partial void OnCREATED_BYChanged();
+    #endregion
+		
+		public RoomType()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HotelId", DbType="Int NOT NULL")]
+		public int HotelId
+		{
+			get
+			{
+				return this._HotelId;
+			}
+			set
+			{
+				if ((this._HotelId != value))
+				{
+					this.OnHotelIdChanging(value);
+					this.SendPropertyChanging();
+					this._HotelId = value;
+					this.SendPropertyChanged("HotelId");
+					this.OnHotelIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberInHotel", DbType="Int")]
+		public System.Nullable<int> NumberInHotel
+		{
+			get
+			{
+				return this._NumberInHotel;
+			}
+			set
+			{
+				if ((this._NumberInHotel != value))
+				{
+					this.OnNumberInHotelChanging(value);
+					this.SendPropertyChanging();
+					this._NumberInHotel = value;
+					this.SendPropertyChanged("NumberInHotel");
+					this.OnNumberInHotelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NameEng", DbType="NVarChar(50)")]
+		public string NameEng
+		{
+			get
+			{
+				return this._NameEng;
+			}
+			set
+			{
+				if ((this._NameEng != value))
+				{
+					this.OnNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._NameEng = value;
+					this.SendPropertyChanged("NameEng");
+					this.OnNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescriptionEng", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string DescriptionEng
+		{
+			get
+			{
+				return this._DescriptionEng;
+			}
+			set
+			{
+				if ((this._DescriptionEng != value))
+				{
+					this.OnDescriptionEngChanging(value);
+					this.SendPropertyChanging();
+					this._DescriptionEng = value;
+					this.SendPropertyChanged("DescriptionEng");
+					this.OnDescriptionEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayOrder", DbType="Int")]
+		public System.Nullable<int> DisplayOrder
+		{
+			get
+			{
+				return this._DisplayOrder;
+			}
+			set
+			{
+				if ((this._DisplayOrder != value))
+				{
+					this.OnDisplayOrderChanging(value);
+					this.SendPropertyChanging();
+					this._DisplayOrder = value;
+					this.SendPropertyChanged("DisplayOrder");
+					this.OnDisplayOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FrontOfficeCode", DbType="NVarChar(50)")]
+		public string FrontOfficeCode
+		{
+			get
+			{
+				return this._FrontOfficeCode;
+			}
+			set
+			{
+				if ((this._FrontOfficeCode != value))
+				{
+					this.OnFrontOfficeCodeChanging(value);
+					this.SendPropertyChanging();
+					this._FrontOfficeCode = value;
+					this.SendPropertyChanged("FrontOfficeCode");
+					this.OnFrontOfficeCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MinPax", DbType="Int")]
+		public System.Nullable<int> MinPax
+		{
+			get
+			{
+				return this._MinPax;
+			}
+			set
+			{
+				if ((this._MinPax != value))
+				{
+					this.OnMinPaxChanging(value);
+					this.SendPropertyChanging();
+					this._MinPax = value;
+					this.SendPropertyChanged("MinPax");
+					this.OnMinPaxChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaxPax", DbType="Int")]
+		public System.Nullable<int> MaxPax
+		{
+			get
+			{
+				return this._MaxPax;
+			}
+			set
+			{
+				if ((this._MaxPax != value))
+				{
+					this.OnMaxPaxChanging(value);
+					this.SendPropertyChanging();
+					this._MaxPax = value;
+					this.SendPropertyChanged("MaxPax");
+					this.OnMaxPaxChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsFeatured", DbType="Int NOT NULL")]
+		public int IsFeatured
+		{
+			get
+			{
+				return this._IsFeatured;
+			}
+			set
+			{
+				if ((this._IsFeatured != value))
+				{
+					this.OnIsFeaturedChanging(value);
+					this.SendPropertyChanging();
+					this._IsFeatured = value;
+					this.SendPropertyChanged("IsFeatured");
+					this.OnIsFeaturedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HKStayOver", DbType="Int NOT NULL")]
+		public int HKStayOver
+		{
+			get
+			{
+				return this._HKStayOver;
+			}
+			set
+			{
+				if ((this._HKStayOver != value))
+				{
+					this.OnHKStayOverChanging(value);
+					this.SendPropertyChanging();
+					this._HKStayOver = value;
+					this.SendPropertyChanged("HKStayOver");
+					this.OnHKStayOverChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HKCheckout", DbType="Int NOT NULL")]
+		public int HKCheckout
+		{
+			get
+			{
+				return this._HKCheckout;
+			}
+			set
+			{
+				if ((this._HKCheckout != value))
+				{
+					this.OnHKCheckoutChanging(value);
+					this.SendPropertyChanging();
+					this._HKCheckout = value;
+					this.SendPropertyChanged("HKCheckout");
+					this.OnHKCheckoutChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HKFree", DbType="Int NOT NULL")]
+		public int HKFree
+		{
+			get
+			{
+				return this._HKFree;
+			}
+			set
+			{
+				if ((this._HKFree != value))
+				{
+					this.OnHKFreeChanging(value);
+					this.SendPropertyChanging();
+					this._HKFree = value;
+					this.SendPropertyChanged("HKFree");
+					this.OnHKFreeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HKVIPStayOver", DbType="Int NOT NULL")]
+		public int HKVIPStayOver
+		{
+			get
+			{
+				return this._HKVIPStayOver;
+			}
+			set
+			{
+				if ((this._HKVIPStayOver != value))
+				{
+					this.OnHKVIPStayOverChanging(value);
+					this.SendPropertyChanging();
+					this._HKVIPStayOver = value;
+					this.SendPropertyChanged("HKVIPStayOver");
+					this.OnHKVIPStayOverChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HKVIPCheckinAdd", DbType="Int NOT NULL")]
+		public int HKVIPCheckinAdd
+		{
+			get
+			{
+				return this._HKVIPCheckinAdd;
+			}
+			set
+			{
+				if ((this._HKVIPCheckinAdd != value))
+				{
+					this.OnHKVIPCheckinAddChanging(value);
+					this.SendPropertyChanging();
+					this._HKVIPCheckinAdd = value;
+					this.SendPropertyChanged("HKVIPCheckinAdd");
+					this.OnHKVIPCheckinAddChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Inactive", DbType="Int NOT NULL")]
+		public int Inactive
+		{
+			get
+			{
+				return this._Inactive;
+			}
+			set
+			{
+				if ((this._Inactive != value))
+				{
+					this.OnInactiveChanging(value);
+					this.SendPropertyChanging();
+					this._Inactive = value;
+					this.SendPropertyChanged("Inactive");
+					this.OnInactiveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATED_DATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CREATED_DATE
+		{
+			get
+			{
+				return this._CREATED_DATE;
+			}
+			set
+			{
+				if ((this._CREATED_DATE != value))
+				{
+					this.OnCREATED_DATEChanging(value);
+					this.SendPropertyChanging();
+					this._CREATED_DATE = value;
+					this.SendPropertyChanged("CREATED_DATE");
+					this.OnCREATED_DATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATED_BY", DbType="NVarChar(50)")]
+		public string CREATED_BY
+		{
+			get
+			{
+				return this._CREATED_BY;
+			}
+			set
+			{
+				if ((this._CREATED_BY != value))
+				{
+					this.OnCREATED_BYChanging(value);
+					this.SendPropertyChanging();
+					this._CREATED_BY = value;
+					this.SendPropertyChanged("CREATED_BY");
+					this.OnCREATED_BYChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
