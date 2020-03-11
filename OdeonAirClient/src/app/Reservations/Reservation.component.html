@@ -17,12 +17,14 @@
     display: flex;
     width: 340px;
     font-size: 19px;
-    margin-right:5px;    
+    margin-right: 5px;
   }
+
   .labeltitle {
     margin-top: 20px;
     font-size: 20px;
   }
+
   .disabledinput {
     align-items: center;
     justify-content: center;
@@ -31,10 +33,12 @@
     font-size: 18px;
     font-weight: 700;
   }
+
   .datetitle {
-    margin-top:10px;
+    margin-top: 10px;
     font-size: 18px;
   }
+
   .example-spacer {
     padding-left: 300px;
   }
@@ -46,6 +50,7 @@
     font-family: Tahoma;
     color: ivory;
   }
+
   .mat-button {
     background-color: darkblue;
     font-style: normal;
@@ -53,21 +58,36 @@
     font-family: Tahoma;
     color: ivory;
   }
-    .validation-error {
-      width: 100%;
-      margin-top: .25rem;
-      font-size: 80%;
-      color: red;
-    }
+
+  .validation-error {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: red;
+  }
 
   .buttonstate {
-    align-items:flex-end;
-    justify-content:flex-end;
-    display:flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    display: flex;
   }
 
   .labelweight {
-    font-size: 24px;
+    font-size: 20px;
+  }
+
+  .buttonstyle {
+    margin-left: 375px;
+  }
+
+  .fieldstyle {
+    font-size:20px;
+    margin-left: 30px;
+  }
+
+  .datewidth {
+    font-size:20px;
+    width: 345px;
   }
 </style>
 <form #form="ngForm" autocomplete="off" class="example-form">
@@ -76,117 +96,170 @@
       <div>
         <div>
           <mat-form-field class="example-full-width">
-            <mat-label>Oda Numarası</mat-label>
+            <mat-label>Room Number</mat-label>
             <input class="disabledinput" matInput disabled [(ngModel)]="reservation.Room_No" name="roomno" #roomno />
           </mat-form-field>
 
+
+        </div>
+        <div>
           <mat-form-field class="example-full-width">
             <mat-label class="labeltitle">First Name</mat-label>
             <input class="spacer" matInput [(ngModel)]="reservation.FirstName" name="firstname" #firstname />
           </mat-form-field>
+          <span class="fieldstyle">
+            <mat-form-field class="example-full-width">
+              <mat-label class="labeltitle">Last Name</mat-label>
+              <input class="spacer" matInput [(ngModel)]="reservation.LastName" name="lastname" #lastname />
+            </mat-form-field>
+          </span>
 
-          <mat-form-field class="example-full-width">
-            <mat-label class="labeltitle">Last Name</mat-label>
-            <input class="spacer" matInput [(ngModel)]="reservation.LastName" name="lastname" #lastname />
-          </mat-form-field>
         </div>
-
         <div>
-          <mat-form-field>
+          <mat-form-field class="datewidth">
             <mat-label>From Date</mat-label>
             <input class="spacer" matInput [(ngModel)]="reservation.FromDate" name="FromDate" #FromDate [matDatepicker]="picker" />
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
 
+          <span class="fieldstyle">
+            <mat-form-field class="datewidth">
+              <mat-label>To Date</mat-label>
+              <input class="spacer" matInput [(ngModel)]="reservation.ToDate" name="ToDate" #ToDate [matDatepicker]="picker2" />
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+          </span>
+
+        </div>
+        <div>
           <mat-form-field>
-            <mat-label>To Date</mat-label>
-            <input class="spacer" matInput [(ngModel)]="reservation.ToDate" name="ToDate" #ToDate [matDatepicker]="picker2" />
-            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-            <mat-datepicker #picker2></mat-datepicker>
+            <mat-label class="labeltitle">RoomType</mat-label>
+            <input class="spacer" matInput [(ngModel)]="reservation.RoomType" name="RoomType" #RoomType />
+          </mat-form-field>
+          <span class="fieldstyle">
+            <mat-form-field>
+              <mat-label class="labeltitle">Nation</mat-label>
+              <input class="spacer" matInput [(ngModel)]="reservation.Nation" name="Nation" #Nation />
+            </mat-form-field>
+          </span>
+
+        </div>
+
+
+
+        <div>
+          <mat-form-field>
+            <mat-label class="labeltitle">VIPStatus</mat-label>
+            <input class="spacer" matInput [(ngModel)]="reservation.VIPStatus" name="VIPStatus" #VIPStatus />
+          </mat-form-field>
+          <span class="fieldstyle">
+            <mat-form-field>
+              <mat-label class="labeltitle">Phone</mat-label>
+              <input class="spacer" matInput [(ngModel)]="reservation.Phone" name="Phone" #Phone />
+            </mat-form-field>
+          </span>
+
+
+
+          <mat-form-field>
+            <mat-label class="labeltitle">ContractName</mat-label>
+            <input class="spacer" matInput [(ngModel)]="reservation.ContractName" name="ContractName" #ContractName />
+          </mat-form-field>
+          <span class="fieldstyle">
+            <mat-form-field>
+              <mat-label class="labeltitle">Status</mat-label>
+              <input class="spacer" matInput [(ngModel)]="reservation.Status" name="Status" #Status />
+            </mat-form-field>
+          </span>
+
+        </div>
+
+        <div>
+          <mat-form-field>
+            <mat-label class="labeltitle">NumberOfChild</mat-label>
+            <input class="spacer" matInput [(ngModel)]="reservation.NumberOfChild" name="NumberOfChild" #NumberOfChild />
+            <div style="color:red" *ngIf="reservation.NumberOfChild >= 5">
+              Çocuk sayısı maksimum 4 olmalıdır.
+            </div>
+            <div style="color:red" *ngIf="reservation.NumberOfChild < 0">
+              Çocuk sayısı negatif sayı olmamalıdır.
+            </div>
+          </mat-form-field>
+          <span class="fieldstyle">
+            <mat-form-field *ngIf="reservation.NumberOfChild > 0 && reservation.NumberOfChild <5">
+              <mat-label class="labeltitle">ChildAge1</mat-label>
+              <input class="spacer" matInput [(ngModel)]="reservation.ChildAge1" name="ChildAge1" #ChildAge1 />
+            </mat-form-field>
+          </span>
+
+          <mat-form-field *ngIf="reservation.NumberOfChild > 1 && reservation.NumberOfChild <5">
+            <mat-label class="labeltitle">ChildAge2</mat-label>
+            <input class="spacer" matInput [(ngModel)]="reservation.ChildAge2" name="ChildAge2" #ChildAge2 />
+          </mat-form-field>
+          <span class="fieldstyle">
+            <mat-form-field *ngIf="reservation.NumberOfChild > 2 && reservation.NumberOfChild <5">
+              <mat-label class="labeltitle">ChildAge3</mat-label>
+              <input class="spacer" matInput [(ngModel)]="reservation.ChildAge3" name="ChildAge3" #ChildAge3 />
+            </mat-form-field>
+          </span>
+
+          <mat-form-field *ngIf="reservation.NumberOfChild > 3 && reservation.NumberOfChild <5">
+            <mat-label class="labeltitle">ChildAge4</mat-label>
+            <input class="spacer" matInput [(ngModel)]="reservation.ChildAge4" name="ChildAge4" #ChildAge4 />
           </mat-form-field>
 
 
         </div>
-
-          <label class="labeltitle">RoomType:</label>
-          <input class="spacer" matInput [(ngModel)]="reservation.RoomType" name="RoomType" #RoomType />
-          <br />
-
-          <label class="labeltitle">Nation:</label>
-          <input class="spacer" matInput [(ngModel)]="reservation.Nation" name="Nation" #Nation />
-          <br />
-
-          <label class="labeltitle">VIPStatus:</label>
-          <input class="spacer" matInput [(ngModel)]="reservation.VIPStatus" name="VIPStatus" #VIPStatus />
-          <br />
-
-          <label class="labeltitle">Phone:</label>
-          <input class="spacer" matInput [(ngModel)]="reservation.Phone" name="Phone" #Phone />
-          <br />
-
-          <label class="labeltitle">ContractName:</label>
-          <input class="spacer" matInput [(ngModel)]="reservation.ContractName" name="ContractName" #ContractName />
-          <br />
-
-          <label class="labeltitle">Status:</label>
-          <input class="spacer" matInput [(ngModel)]="reservation.Status" name="Status" #Status />
-          <br />
-
-          <div>
-            <mat-form-field>
-              <mat-label class="labeltitle">NumberOfChild</mat-label>
-              <input class="spacer" matInput [(ngModel)]="reservation.NumberOfChild" name="NumberOfChild" #NumberOfChild />
+        <div>
+          <mat-form-field>
+            <mat-label class="labeltitle">NumberOfBaby</mat-label>
+            <input class="spacer" matInput [(ngModel)]="reservation.NumberOfBaby" name="NumberOfBaby" #NumberOfBaby />
+            <div style="color:red" *ngIf="reservation.NumberOfBaby >= 3">
+              Bebek sayısı maksimum 2 olmalıdır.
+            </div>
+            <div style="color:red" *ngIf="reservation.NumberOfBaby < 0">
+              Bebek sayısı negatif olmamalıdır.
+            </div>
+          </mat-form-field>
+          <span class="fieldstyle">
+            <mat-form-field *ngIf="reservation.NumberOfBaby > 0 && reservation.NumberOfBaby <3">
+              <mat-label class="labeltitle">BabyAge1</mat-label>
+              <input class="spacer" matInput [(ngModel)]="reservation.BabyAge1" name="BabyAge1" #BabyAge1 />
             </mat-form-field>
-            <mat-form-field *ngIf="reservation.NumberOfChild > 0">
-              <mat-label class="labeltitle">ChildAge1</mat-label>
-              <input class="spacer" matInput [(ngModel)]="reservation.ChildAge1" name="ChildAge1" #ChildAge1 />
-            </mat-form-field>
-            <mat-form-field *ngIf="reservation.NumberOfChild > 1">
-              <mat-label class="labeltitle">ChildAge2</mat-label>
-              <input class="spacer" matInput [(ngModel)]="reservation.ChildAge2" name="ChildAge2" #ChildAge2 />
-            </mat-form-field>
-            <mat-form-field *ngIf="reservation.NumberOfChild > 2">
-              <mat-label class="labeltitle">ChildAge3</mat-label>
-              <input class="spacer" matInput [(ngModel)]="reservation.ChildAge3" name="ChildAge3" #ChildAge3 />
-            </mat-form-field>
-            <mat-form-field *ngIf="reservation.NumberOfChild > 3">
-              <mat-label class="labeltitle">ChildAge4</mat-label>
-              <input class="spacer" matInput [(ngModel)]="reservation.ChildAge4" name="ChildAge4" #ChildAge4 />
-            </mat-form-field>
+          </span>
 
+          <mat-form-field *ngIf="reservation.NumberOfBaby > 1 && reservation.NumberOfBaby <3">
+            <mat-label class="labeltitle">BabyAge2</mat-label>
+            <input class="spacer" matInput [(ngModel)]="reservation.BabyAge2" name="BabyAge2" #BabyAge2 />
+          </mat-form-field>
 
-          </div>
-
-          <label class="labeltitle">NumberOfBaby:</label>
-          <input class="spacer" matInput [(ngModel)]="reservation.NumberOfBaby" name="NumberOfBaby" #NumberOfBaby />
-          <br />
-
-          <label class="labeltitle">BabyAge1:</label>
-          <input class="spacer" matInput [(ngModel)]="reservation.BabyAge1" name="BabyAge1" #BabyAge1 />
-          <br />
-
-          <label class="labeltitle">BabyAge2:</label>
-          <input class="spacer" matInput [(ngModel)]="reservation.BabyAge2" name="BabyAge2" #BabyAge2 />
-          <br />
-
-          <label class="labeltitle">BookDate:</label>
-          <input class="spacer" matInput [(ngModel)]="reservation.BookDate" name="BookDate" #BookDate />
-          <div class="datetitle">{{reservation.BookDate | date:'dd MMMM yyyy'}}</div>
-          <br />
+        </div>
+        <mat-form-field class="datewidth">
+          <mat-label class="labeltitle">Book Date</mat-label>
+          <input class="spacer" matInput [(ngModel)]="reservation.BookDate" name="BookDate" #BookDate [matDatepicker]="picker3" />
+          <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+          <mat-datepicker #picker3></mat-datepicker>
+        </mat-form-field>
+        <div>
 
           <button mat-button>
             Kaydı Güncelle
-
           </button>
-          <button mat-button routerLink="/Racks">
-            Oda Tablosuna Geri Dön
-
-          </button>
-          <br />
+          <span class="buttonstyle">
+            <button mat-button routerLink="/Racks">
+              Oda Tablosuna Geri Dön
+            </button>
+          </span>
+        </div>
       </div>
-      
 
+
+      <br />
     </div>
+
+
   </div>
+
 </form>

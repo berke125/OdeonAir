@@ -24,7 +24,6 @@
     font-size: 12pt;
     font-family: Tahoma;
     color: ivory;
-
   }
 
   .validation-error {
@@ -34,29 +33,40 @@
     color: red;
   }
 
+
   .buttonstate {
-  
+    margin-left: 300px;
   }
-  .labelweight
-  {
-    font-size:24px;
+
+  .labelweight {
+    font-size: 24px;
   }
-</style> 
+</style>
 <form #form="ngForm" autocomplete="off" class="example-form">
   <div class="center">
     <div id="MainContent">
-      <label class="labelweight">Enter the Hotel's Id: </label>
-      <mat-form-field class="example-full-width">
-        <input name=aCode #aCode="ngModel" [(ngModel)]="id" matInput type="text" required>
-        <div class="validation-error" *ngIf="aCode.invalid && (aCode.dirty || aCode.touched)">
-          This field is required.
-        </div>
-      </mat-form-field>
-      <br />
-      <button class="buttonstate" mat-raised-button  [disabled]="form.invalid" (click)="login()">Next</button>
-      <button class="buttonstate" mat-raised-button  routerLink="/Home">Cancel</button>
+      <div>
+        
+        <mat-form-field class="example-full-width">
+          <mat-label class="labelweight">Enter the Hotel's Id: </mat-label>
+          <input name=aCode #aCode="ngModel" [(ngModel)]="id" matInput type="text" required>
+          <div class="validation-error" *ngIf="aCode.invalid && (aCode.dirty || aCode.touched)">
+            This field is required.
+          </div>
+        </mat-form-field>
+      </div>
       
-      
+      <div>
+        <button mat-raised-button [disabled]="form.invalid" (click)="login()">Next</button>
+        <span class="buttonstate">
+          <button mat-raised-button routerLink="/Home">Cancel</button>
+        </span>
+      </div>
+
+
+
+
+
     </div>
   </div>
 </form>
