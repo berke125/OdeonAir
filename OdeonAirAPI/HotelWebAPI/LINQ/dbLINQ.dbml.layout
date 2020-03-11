@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 19.875" name="dbLINQ">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.75, 19.875" name="dbLINQ">
   <DataContextMoniker Name="/dbLINQDataContext" />
   <nestedChildShapes>
     <classShape Id="9384bf2e-efdf-4692-808d-69c1c0aad9ff" absoluteBounds="0.75, 0.5, 2, 11.7705712890625">
@@ -18,6 +18,18 @@
       <DataClassMoniker Name="/dbLINQDataContext/ReservationVIEW" />
       <nestedChildShapes>
         <elementListCompartment Id="ba312de8-7e20-4006-9a96-269d43f258d9" absoluteBounds="5.89, 0.96, 1.9700000000000002, 18.518025716145832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="edda3374-5fdd-4e78-b619-42d3bdaa1f4d" absoluteBounds="10.5, 0.5, 2, 14.847394205729165">
+      <DataClassMoniker Name="/dbLINQDataContext/Reservation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="56eccc1f-32ef-4244-8b91-9840af77736e" absoluteBounds="10.515, 0.96, 1.9700000000000002, 14.287394205729166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="be57c10f-2cb5-4088-93d3-63b9a8859fe4" absoluteBounds="8.125, 0.5, 2, 4.6554182942708326">
+      <DataClassMoniker Name="/dbLINQDataContext/RoomType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e9959402-d9f3-4190-bdec-8d393310bde8" absoluteBounds="8.14, 0.96, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
