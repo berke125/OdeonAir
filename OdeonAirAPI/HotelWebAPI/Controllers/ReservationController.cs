@@ -12,13 +12,39 @@ namespace HotelWebAPI.Controllers
     public class ReservationController : ApiController
     {
         private dbLINQDataContext db = new dbLINQDataContext();
+        public IHttpActionResult Put(int res_id, ReservationPoco reservation)
+        {
+            var updated_reservation = db.ReservationVIEW.FirstOrDefault(x => x.Id == res_id);
+            if (updated_reservation != null)
+            {
+                updated_reservation.Firstname = reservation.FirstName;
+                updated_reservation.Lastname = reservation.LastName;
+                //updated_reservation.Fromdate = reservation.FromDate;
+                //updated_reservation.Todate = reservation.ToDate;
+                updated_reservation.RoomType = reservation.RoomType;
+                updated_reservation.Nation = reservation.Nation;
+                updated_reservation.VIPStatusText = reservation.VIPStatus;
+                updated_reservation.Phone = reservation.Phone;
+                updated_reservation.ContractName = reservation.ContractName;
+                updated_reservation.StatusText = reservation.Status;
+                updated_reservation.NumberOfChild = reservation.NumberOfChild;
+                updated_reservation.NumberOfBaby = reservation.NumberOfBaby;
+                updated_reservation.BookDate = reservation.BookDate;
 
+                db.SubmitChanges();
+            }
+            else
+            {
+                return NotFound();
+            }
+            return Ok();
+        }
         public ReservationPoco GetById(int id)
         {
             ReservationPoco reservationpoco = null;
 
             var reservationdb = db.ReservationVIEW.FirstOrDefault(x => x.Id == id);
-          
+
             if (reservationdb != null)
             {
                 reservationpoco = new ReservationPoco
@@ -51,7 +77,7 @@ namespace HotelWebAPI.Controllers
             }
 
             return reservationpoco;
-                
+
 
 
         }

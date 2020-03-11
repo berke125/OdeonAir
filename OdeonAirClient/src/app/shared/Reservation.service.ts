@@ -20,4 +20,6 @@ export class ReservationService
   GetReservationById(resid: number) {
     return this._http.get(this.rootURL + '/Reservation/' + resid.toString());
   }
+
+
 }
