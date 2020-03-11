@@ -15,8 +15,7 @@ namespace HotelWebAPI.Controllers
         public List<RoomTypePoco> GetRoomTypes(int otelId)
         {
             List<RoomType> roomtypelist = (from x in db.RoomType
-                                           from y in db._RACKVIEW
-                                           where x.HotelId == otelId && x.HotelId==y.InId
+                                           where x.HotelId == otelId 
                                            select x
                                            ).ToList();
             List<RoomTypePoco> roomTypePocoList = new List<RoomTypePoco>();
