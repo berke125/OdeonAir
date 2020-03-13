@@ -23,6 +23,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { RackComponent } from './Racks/Rack.component';
 import { ReservationComponent } from './Reservations/Reservation.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
 
 import { MatNativeDateModule } from '@angular/material';
 //import { MatMomentDateModule } from '@angular/material/d
@@ -60,6 +62,8 @@ import { MatNativeDateModule } from '@angular/material';
     MatRadioModule,
     Ng2SearchPipeModule,
     MatTreeModule,
+    MatSelectModule,
+    MatCardModule,
     ToastrModule.forRoot()
   ],
   providers: [CustomerService],

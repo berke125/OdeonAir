@@ -41,13 +41,17 @@
   .labelweight {
     font-size: 24px;
   }
+  .fullwidth
+  {
+    width:250px;
+  }
 </style>
 <form #form="ngForm" autocomplete="off" class="example-form">
   <div class="center">
     <div id="MainContent">
       <div>
         
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="fullwidth">
           <mat-label class="labelweight">Enter the Hotel's Id: </mat-label>
           <input name=aCode #aCode="ngModel" [(ngModel)]="id" matInput type="text" required>
           <div class="validation-error" *ngIf="aCode.invalid && (aCode.dirty || aCode.touched)">

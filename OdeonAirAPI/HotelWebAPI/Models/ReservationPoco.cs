@@ -10,8 +10,8 @@ namespace HotelWebAPI.Models
         public string Room_No { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public DateTime? FromDate { get; set; }
-        public DateTime? ToDate { get; set; }
+        public DateTime FromDate { get; set; }
+        public DateTime ToDate { get; set; }
         public string RoomType { get; set; }
         public string Nation { get; set; }
         public string VIPStatus { get; set; }

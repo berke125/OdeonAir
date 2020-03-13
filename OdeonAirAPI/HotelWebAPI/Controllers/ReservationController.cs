@@ -19,8 +19,8 @@ namespace HotelWebAPI.Controllers
             {
                 updated_reservation.Firstname = reservation.FirstName;
                 updated_reservation.Lastname = reservation.LastName;
-                //updated_reservation.Fromdate = reservation.FromDate;
-                //updated_reservation.Todate = reservation.ToDate;
+                updated_reservation.Fromdate = reservation.FromDate;
+                updated_reservation.Todate = reservation.ToDate;
                 updated_reservation.RoomType = reservation.RoomType;
                 updated_reservation.Nation = reservation.Nation;
                 updated_reservation.VIPStatusText = reservation.VIPStatus;
